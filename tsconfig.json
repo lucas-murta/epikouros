@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/epikouros-e2e"
+    },
+    {
+      "path": "./apps/epikouros"
+    },
+    {
+      "path": "./apps/web-view-e2e"
+    },
+    {
+      "path": "./apps/web-view"
+    },
+    {
+      "path": "./libs/ep-ds"
+    }
+  ]
+}
