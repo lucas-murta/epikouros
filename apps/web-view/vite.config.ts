@@ -19,16 +19,16 @@ export default defineConfig(() => ({
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
   // },
+  resolve: {
+    alias: {
+      '@ep-ds': join(__dirname, '../../libs/ep-ds/src'),
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "libs/ep-ds/src/globals/index.scss" as *;`,
+        additionalData: `@use "@ep-ds/globals/index.scss" as *;`,
       },
-    },
-  },
-  resolve: {
-    alias: {
-      '@styles': join(__dirname, '../../libs/ep-ds/src/globals'),
     },
   },
   build: {

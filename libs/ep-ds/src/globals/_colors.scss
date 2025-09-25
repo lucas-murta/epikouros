@@ -1,5 +1,5 @@
-@use './theme/theme-light.scss';
-@use './theme/theme-dark.scss';
+@import './theme/theme-light.scss';
+@import './theme/theme-dark.scss';
 
 $color-brand: var(--color-brand, $color-light-brand);
 $color-primary: var(--color-primary, $color-light-primary);
