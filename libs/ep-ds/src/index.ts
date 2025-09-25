@@ -1,1 +1,1 @@
-export * from './lib/ep-ds';
+export * from './components/ep-grid';

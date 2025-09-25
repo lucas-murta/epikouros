@@ -1,11 +1,11 @@
 import styles from './ep-ds.module.scss';
 
-export function EpikourosEpDs() {
+export function GridComponent() {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to EpikourosEpDs!</h1>
+      <h1>Welcome to GridComponent!</h1>
     </div>
   );
 }
 
-export default EpikourosEpDs;
+export default GridComponent;
