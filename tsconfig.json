@@ -4,12 +4,6 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/epikouros-e2e"
-    },
-    {
-      "path": "./apps/epikouros"
-    },
-    {
       "path": "./apps/web-view-e2e"
     },
     {

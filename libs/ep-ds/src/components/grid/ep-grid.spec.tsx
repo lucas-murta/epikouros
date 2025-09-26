@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import EpikourosEpDs from './ep-grid';
+import { Grid } from './ep-grid';
 
-describe('EpikourosEpDs', () => {
+describe('Grid', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<EpikourosEpDs />);
+    const { baseElement } = render(<Grid>Test content</Grid>);
     expect(baseElement).toBeTruthy();
   });
 });
