@@ -1,4 +1,4 @@
-import styles from './ep-ds.module.scss';
+import styles from './ep-grid.module.scss';
 
 export function GridComponent() {
   return (
