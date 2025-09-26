@@ -13,37 +13,27 @@ export function processSpacingShorthand(
   if (!value) return [];
 
   const values = value.trim().split(/\s+/);
-  const classes: string[] = [];
-
-  if (values.length === 1) {
-    // Todos os lados (p-2)
-    const className = styles[`${prefix}-${values[0]}`];
-    if (className) classes.push(className);
-  } else if (values.length === 2) {
-    // Vertical e horizontal (py-2 px-4)
-    const verticalClass = styles[`${prefix}y-${values[0]}`];
-    const horizontalClass = styles[`${prefix}x-${values[1]}`];
-    if (verticalClass) classes.push(verticalClass);
-    if (horizontalClass) classes.push(horizontalClass);
-  } else if (values.length === 3) {
-    // Top, horizontal e bottom (pt-2 px-4 pb-3)
-    const topClass = styles[`${prefix}t-${values[0]}`];
-    const horizontalClass = styles[`${prefix}x-${values[1]}`];
-    const bottomClass = styles[`${prefix}b-${values[2]}`];
-    if (topClass) classes.push(topClass);
-    if (horizontalClass) classes.push(horizontalClass);
-    if (bottomClass) classes.push(bottomClass);
-  } else if (values.length === 4) {
-    // Top, right, bottom, left (pt-2 pr-4 pb-3 pl-1)
-    const topClass = styles[`${prefix}t-${values[0]}`];
-    const rightClass = styles[`${prefix}r-${values[1]}`];
-    const bottomClass = styles[`${prefix}b-${values[2]}`];
-    const leftClass = styles[`${prefix}l-${values[3]}`];
-    if (topClass) classes.push(topClass);
-    if (rightClass) classes.push(rightClass);
-    if (bottomClass) classes.push(bottomClass);
-    if (leftClass) classes.push(leftClass);
-  }
-
-  return classes;
+  const rules = getSpacingRules(values.length, prefix, values);
+  return rules.map(r => styles[r]).filter(Boolean);
 }
+
+const getSpacingRules = (len: number, prefix: string, values: string[]): string[] => {
+  const rules: string[] = [];
+  if (len === 1) rules.push(`${prefix}-${values[0]}`);
+  if (len === 2) {
+    rules.push(`${prefix}y-${values[0]}`, `${prefix}x-${values[1]}`);
+  }
+  if (len === 3) {
+    rules.push(`${prefix}t-${values[0]}`, `${prefix}x-${values[1]}`, `${prefix}b-${values[2]}`);
+  }
+  if (len === 4) {
+    rules.push(
+      `${prefix}t-${values[0]}`,
+      `${prefix}r-${values[1]}`,
+      `${prefix}b-${values[2]}`,
+      `${prefix}l-${values[3]}`
+    );
+  }
+  return rules;
+}
+
