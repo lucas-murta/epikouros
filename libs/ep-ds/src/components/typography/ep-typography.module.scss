@@ -1,0 +1,239 @@
+@import '../../globals/typography';
+@import '../../globals/colors';
+
+.typography {
+  margin: 0;
+  padding: 0;
+  color: $color-content-default;
+}
+
+// Variantes de tipografia baseadas no design system
+.variant-heading-1 {
+  @include typography('heading-1');
+}
+
+.variant-heading-2 {
+  @include typography('heading-2');
+}
+
+.variant-heading-3 {
+  @include typography('heading-3');
+}
+
+.variant-heading-4 {
+  @include typography('heading-4');
+}
+
+.variant-highlight-large {
+  @include typography('highlight-large');
+}
+
+.variant-highlight-medium {
+  @include typography('highlight-medium');
+}
+
+.variant-body-large {
+  @include typography('body-large');
+}
+
+.variant-body-medium {
+  @include typography('body-medium');
+}
+
+.variant-body-small {
+  @include typography('body-small');
+}
+
+// Tamanhos de fonte
+.size-xs {
+  font-size: $font-size-xs;
+}
+
+.size-sm {
+  font-size: $font-size-sm;
+}
+
+.size-base {
+  font-size: $font-size-base;
+}
+
+.size-md {
+  font-size: $font-size-md;
+}
+
+.size-lg {
+  font-size: $font-size-lg;
+}
+
+.size-xl {
+  font-size: $font-size-xl;
+}
+
+.size-2xl {
+  font-size: $font-size-2xl;
+}
+
+.size-3xl {
+  font-size: $font-size-3xl;
+}
+
+.size-4xl {
+  font-size: $font-size-4xl;
+}
+
+.size-5xl {
+  font-size: $font-size-5xl;
+}
+
+// Pesos de fonte
+.weight-light {
+  font-weight: $font-weight-light;
+}
+
+.weight-regular {
+  font-weight: $font-weight-regular;
+}
+
+.weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+.weight-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+// Famílias de fonte
+.family-heading {
+  font-family: $font-family-heading;
+}
+
+.family-highlight {
+  font-family: $font-family-highlight;
+}
+
+.family-body {
+  font-family: $font-family-body;
+}
+
+// Alturas de linha
+.line-height-tight {
+  line-height: $line-height-tight;
+}
+
+.line-height-snug {
+  line-height: $line-height-snug;
+}
+
+.line-height-normal {
+  line-height: $line-height-normal;
+}
+
+.line-height-relaxed {
+  line-height: $line-height-relaxed;
+}
+
+.line-height-loose {
+  line-height: $line-height-loose;
+}
+
+// Espaçamentos entre letras
+.letter-spacing-tight {
+  letter-spacing: $letter-spacing-tight;
+}
+
+.letter-spacing-normal {
+  letter-spacing: $letter-spacing-normal;
+}
+
+.letter-spacing-wide {
+  letter-spacing: $letter-spacing-wide;
+}
+
+.letter-spacing-wider {
+  letter-spacing: $letter-spacing-wider;
+}
+
+// Alinhamentos de texto
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+// Decorações de texto
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+// Transformações de texto
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+// Truncamento de texto
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Truncamento com múltiplas linhas
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  &.lines-1 {
+    -webkit-line-clamp: 1;
+  }
+
+  &.lines-2 {
+    -webkit-line-clamp: 2;
+  }
+
+  &.lines-3 {
+    -webkit-line-clamp: 3;
+  }
+
+  &.lines-4 {
+    -webkit-line-clamp: 4;
+  }
+
+  &.lines-5 {
+    -webkit-line-clamp: 5;
+  }
+
+  &.lines-6 {
+    -webkit-line-clamp: 6;
+  }
+}
