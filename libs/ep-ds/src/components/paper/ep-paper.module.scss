@@ -1,0 +1,420 @@
+@import '../../globals/colors';
+@import '../../globals/spacings';
+
+// Tokens de elevação para Paper
+$paper-shadow-0: 0 0 0 0 transparent;
+$paper-shadow-1: 0 1px 3px 0 $color-shadow-0, 0 1px 2px 0 $color-shadow-1;
+$paper-shadow-2: 0 4px 6px -1px $color-shadow-0, 0 2px 4px -1px $color-shadow-1;
+$paper-shadow-3: 0 10px 15px -3px $color-shadow-0, 0 4px 6px -2px $color-shadow-1;
+$paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shadow-1;
+
+// Classe base do Paper
+.paper {
+  display: block;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  
+  // Variantes de background
+  &.surface-0 {
+    background-color: $color-surface-0;
+  }
+  
+  &.surface-1 {
+    background-color: $color-surface-1;
+  }
+  
+  &.surface-2 {
+    background-color: $color-surface-2;
+  }
+  
+  &.surface-3 {
+    background-color: $color-surface-3;
+  }
+  
+  &.surface-4 {
+    background-color: $color-surface-4;
+  }
+  
+  &.primary {
+    background-color: $color-primary;
+    color: $color-content-bright;
+  }
+  
+  &.secondary {
+    background-color: $color-secondary;
+    color: $color-content-bright;
+  }
+  
+  // Variantes de borda
+  &.border-none {
+    border: none;
+  }
+  
+  &.border-1 {
+    border: 1px solid $color-border-1;
+  }
+  
+  &.border-2 {
+    border: 1px solid $color-border-2;
+  }
+  
+  &.border-3 {
+    border: 1px solid $color-border-3;
+  }
+  
+  &.border-primary {
+    border: 1px solid $color-primary;
+  }
+  
+  &.border-secondary {
+    border: 1px solid $color-secondary;
+  }
+  
+  // Variantes de border-radius
+  &.radius-none {
+    border-radius: 0;
+  }
+  
+  &.radius-1 {
+    border-radius: $spacing-1; // 8px
+  }
+  
+  &.radius-2 {
+    border-radius: $spacing-2; // 16px
+  }
+  
+  // Variantes de elevação
+  &.elevation-0 {
+    box-shadow: $paper-shadow-0;
+  }
+  
+  &.elevation-1 {
+    box-shadow: $paper-shadow-1;
+  }
+  
+  &.elevation-2 {
+    box-shadow: $paper-shadow-2;
+  }
+  
+  &.elevation-3 {
+    box-shadow: $paper-shadow-3;
+  }
+  
+  &.elevation-4 {
+    box-shadow: $paper-shadow-4;
+  }
+  
+  // Estados interativos para elevação
+  &.interactive {
+    cursor: pointer;
+    
+    &:hover {
+      &.elevation-0 {
+        box-shadow: $paper-shadow-1;
+      }
+      
+      &.elevation-1 {
+        box-shadow: $paper-shadow-2;
+      }
+      
+      &.elevation-2 {
+        box-shadow: $paper-shadow-3;
+      }
+      
+      &.elevation-3 {
+        box-shadow: $paper-shadow-4;
+      }
+    }
+    
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+// Classes utilitárias para padding interno (legado)
+.paper-padding {
+  &.padding-1 {
+    padding: $spacing-1;
+  }
+  
+  &.padding-2 {
+    padding: $spacing-2;
+  }
+  
+  &.padding-3 {
+    padding: $spacing-3;
+  }
+  
+  &.padding-4 {
+    padding: $spacing-4;
+  }
+}
+
+// Classes de largura
+.w-auto { width: auto; }
+.w-full { width: 100%; }
+.w-fit-content { width: fit-content; }
+.w-min-content { width: min-content; }
+.w-max-content { width: max-content; }
+
+// Larguras baseadas em spacing tokens
+.w-1 { width: $spacing-1; }
+.w-2 { width: $spacing-2; }
+.w-3 { width: $spacing-3; }
+.w-4 { width: $spacing-4; }
+.w-5 { width: $spacing-5; }
+.w-6 { width: $spacing-6; }
+.w-7 { width: $spacing-7; }
+.w-8 { width: $spacing-8; }
+.w-9 { width: $spacing-9; }
+.w-10 { width: $spacing-10; }
+.w-11 { width: $spacing-11; }
+.w-12 { width: $spacing-12; }
+
+// Larguras adicionais
+.w-16 { width: 4rem; }
+.w-20 { width: 5rem; }
+.w-24 { width: 6rem; }
+.w-32 { width: 8rem; }
+.w-40 { width: 10rem; }
+.w-48 { width: 12rem; }
+.w-56 { width: 14rem; }
+.w-64 { width: 16rem; }
+.w-72 { width: 18rem; }
+.w-80 { width: 20rem; }
+.w-96 { width: 24rem; }
+
+// Classes de altura
+.h-auto { height: auto; }
+.h-full { height: 100%; }
+.h-fit-content { height: fit-content; }
+.h-min-content { height: min-content; }
+.h-max-content { height: max-content; }
+
+// Alturas baseadas em spacing tokens
+.h-1 { height: $spacing-1; }
+.h-2 { height: $spacing-2; }
+.h-3 { height: $spacing-3; }
+.h-4 { height: $spacing-4; }
+.h-5 { height: $spacing-5; }
+.h-6 { height: $spacing-6; }
+.h-7 { height: $spacing-7; }
+.h-8 { height: $spacing-8; }
+.h-9 { height: $spacing-9; }
+.h-10 { height: $spacing-10; }
+.h-11 { height: $spacing-11; }
+.h-12 { height: $spacing-12; }
+
+// Alturas adicionais
+.h-16 { height: 4rem; }
+.h-20 { height: 5rem; }
+.h-24 { height: 6rem; }
+.h-32 { height: 8rem; }
+.h-40 { height: 10rem; }
+.h-48 { height: 12rem; }
+.h-56 { height: 14rem; }
+.h-64 { height: 16rem; }
+.h-72 { height: 18rem; }
+.h-80 { height: 20rem; }
+.h-96 { height: 24rem; }
+
+// Classes responsivas para largura
+@media (max-width: 640px) {
+  .sm-w-auto { width: auto; }
+  .sm-w-full { width: 100%; }
+  .sm-w-fit-content { width: fit-content; }
+  .sm-w-min-content { width: min-content; }
+  .sm-w-max-content { width: max-content; }
+  
+  .sm-w-1 { width: $spacing-1; }
+  .sm-w-2 { width: $spacing-2; }
+  .sm-w-3 { width: $spacing-3; }
+  .sm-w-4 { width: $spacing-4; }
+  .sm-w-5 { width: $spacing-5; }
+  .sm-w-6 { width: $spacing-6; }
+  .sm-w-7 { width: $spacing-7; }
+  .sm-w-8 { width: $spacing-8; }
+  .sm-w-9 { width: $spacing-9; }
+  .sm-w-10 { width: $spacing-10; }
+  .sm-w-11 { width: $spacing-11; }
+  .sm-w-12 { width: $spacing-12; }
+  
+  .sm-w-16 { width: 4rem; }
+  .sm-w-20 { width: 5rem; }
+  .sm-w-24 { width: 6rem; }
+  .sm-w-32 { width: 8rem; }
+  .sm-w-40 { width: 10rem; }
+  .sm-w-48 { width: 12rem; }
+  .sm-w-56 { width: 14rem; }
+  .sm-w-64 { width: 16rem; }
+  .sm-w-72 { width: 18rem; }
+  .sm-w-80 { width: 20rem; }
+  .sm-w-96 { width: 24rem; }
+}
+
+@media (max-width: 768px) {
+  .md-w-auto { width: auto; }
+  .md-w-full { width: 100%; }
+  .md-w-fit-content { width: fit-content; }
+  .md-w-min-content { width: min-content; }
+  .md-w-max-content { width: max-content; }
+  
+  .md-w-1 { width: $spacing-1; }
+  .md-w-2 { width: $spacing-2; }
+  .md-w-3 { width: $spacing-3; }
+  .md-w-4 { width: $spacing-4; }
+  .md-w-5 { width: $spacing-5; }
+  .md-w-6 { width: $spacing-6; }
+  .md-w-7 { width: $spacing-7; }
+  .md-w-8 { width: $spacing-8; }
+  .md-w-9 { width: $spacing-9; }
+  .md-w-10 { width: $spacing-10; }
+  .md-w-11 { width: $spacing-11; }
+  .md-w-12 { width: $spacing-12; }
+  
+  .md-w-16 { width: 4rem; }
+  .md-w-20 { width: 5rem; }
+  .md-w-24 { width: 6rem; }
+  .md-w-32 { width: 8rem; }
+  .md-w-40 { width: 10rem; }
+  .md-w-48 { width: 12rem; }
+  .md-w-56 { width: 14rem; }
+  .md-w-64 { width: 16rem; }
+  .md-w-72 { width: 18rem; }
+  .md-w-80 { width: 20rem; }
+  .md-w-96 { width: 24rem; }
+}
+
+@media (max-width: 1024px) {
+  .lg-w-auto { width: auto; }
+  .lg-w-full { width: 100%; }
+  .lg-w-fit-content { width: fit-content; }
+  .lg-w-min-content { width: min-content; }
+  .lg-w-max-content { width: max-content; }
+  
+  .lg-w-1 { width: $spacing-1; }
+  .lg-w-2 { width: $spacing-2; }
+  .lg-w-3 { width: $spacing-3; }
+  .lg-w-4 { width: $spacing-4; }
+  .lg-w-5 { width: $spacing-5; }
+  .lg-w-6 { width: $spacing-6; }
+  .lg-w-7 { width: $spacing-7; }
+  .lg-w-8 { width: $spacing-8; }
+  .lg-w-9 { width: $spacing-9; }
+  .lg-w-10 { width: $spacing-10; }
+  .lg-w-11 { width: $spacing-11; }
+  .lg-w-12 { width: $spacing-12; }
+  
+  .lg-w-16 { width: 4rem; }
+  .lg-w-20 { width: 5rem; }
+  .lg-w-24 { width: 6rem; }
+  .lg-w-32 { width: 8rem; }
+  .lg-w-40 { width: 10rem; }
+  .lg-w-48 { width: 12rem; }
+  .lg-w-56 { width: 14rem; }
+  .lg-w-64 { width: 16rem; }
+  .lg-w-72 { width: 18rem; }
+  .lg-w-80 { width: 20rem; }
+  .lg-w-96 { width: 24rem; }
+}
+
+// Classes responsivas para altura
+@media (max-width: 640px) {
+  .sm-h-auto { height: auto; }
+  .sm-h-full { height: 100%; }
+  .sm-h-fit-content { height: fit-content; }
+  .sm-h-min-content { height: min-content; }
+  .sm-h-max-content { height: max-content; }
+  
+  .sm-h-1 { height: $spacing-1; }
+  .sm-h-2 { height: $spacing-2; }
+  .sm-h-3 { height: $spacing-3; }
+  .sm-h-4 { height: $spacing-4; }
+  .sm-h-5 { height: $spacing-5; }
+  .sm-h-6 { height: $spacing-6; }
+  .sm-h-7 { height: $spacing-7; }
+  .sm-h-8 { height: $spacing-8; }
+  .sm-h-9 { height: $spacing-9; }
+  .sm-h-10 { height: $spacing-10; }
+  .sm-h-11 { height: $spacing-11; }
+  .sm-h-12 { height: $spacing-12; }
+  
+  .sm-h-16 { height: 4rem; }
+  .sm-h-20 { height: 5rem; }
+  .sm-h-24 { height: 6rem; }
+  .sm-h-32 { height: 8rem; }
+  .sm-h-40 { height: 10rem; }
+  .sm-h-48 { height: 12rem; }
+  .sm-h-56 { height: 14rem; }
+  .sm-h-64 { height: 16rem; }
+  .sm-h-72 { height: 18rem; }
+  .sm-h-80 { height: 20rem; }
+  .sm-h-96 { height: 24rem; }
+}
+
+@media (max-width: 768px) {
+  .md-h-auto { height: auto; }
+  .md-h-full { height: 100%; }
+  .md-h-fit-content { height: fit-content; }
+  .md-h-min-content { height: min-content; }
+  .md-h-max-content { height: max-content; }
+  
+  .md-h-1 { height: $spacing-1; }
+  .md-h-2 { height: $spacing-2; }
+  .md-h-3 { height: $spacing-3; }
+  .md-h-4 { height: $spacing-4; }
+  .md-h-5 { height: $spacing-5; }
+  .md-h-6 { height: $spacing-6; }
+  .md-h-7 { height: $spacing-7; }
+  .md-h-8 { height: $spacing-8; }
+  .md-h-9 { height: $spacing-9; }
+  .md-h-10 { height: $spacing-10; }
+  .md-h-11 { height: $spacing-11; }
+  .md-h-12 { height: $spacing-12; }
+  
+  .md-h-16 { height: 4rem; }
+  .md-h-20 { height: 5rem; }
+  .md-h-24 { height: 6rem; }
+  .md-h-32 { height: 8rem; }
+  .md-h-40 { height: 10rem; }
+  .md-h-48 { height: 12rem; }
+  .md-h-56 { height: 14rem; }
+  .md-h-64 { height: 16rem; }
+  .md-h-72 { height: 18rem; }
+  .md-h-80 { height: 20rem; }
+  .md-h-96 { height: 24rem; }
+}
+
+@media (max-width: 1024px) {
+  .lg-h-auto { height: auto; }
+  .lg-h-full { height: 100%; }
+  .lg-h-fit-content { height: fit-content; }
+  .lg-h-min-content { height: min-content; }
+  .lg-h-max-content { height: max-content; }
+  
+  .lg-h-1 { height: $spacing-1; }
+  .lg-h-2 { height: $spacing-2; }
+  .lg-h-3 { height: $spacing-3; }
+  .lg-h-4 { height: $spacing-4; }
+  .lg-h-5 { height: $spacing-5; }
+  .lg-h-6 { height: $spacing-6; }
+  .lg-h-7 { height: $spacing-7; }
+  .lg-h-8 { height: $spacing-8; }
+  .lg-h-9 { height: $spacing-9; }
+  .lg-h-10 { height: $spacing-10; }
+  .lg-h-11 { height: $spacing-11; }
+  .lg-h-12 { height: $spacing-12; }
+  
+  .lg-h-16 { height: 4rem; }
+  .lg-h-20 { height: 5rem; }
+  .lg-h-24 { height: 6rem; }
+  .lg-h-32 { height: 8rem; }
+  .lg-h-40 { height: 10rem; }
+  .lg-h-48 { height: 12rem; }
+  .lg-h-56 { height: 14rem; }
+  .lg-h-64 { height: 16rem; }
+  .lg-h-72 { height: 18rem; }
+  .lg-h-80 { height: 20rem; }
+  .lg-h-96 { height: 24rem; }
+}

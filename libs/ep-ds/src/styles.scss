@@ -1,0 +1,7 @@
+// Estilos globais
+@import './globals/index.scss';
+
+// CSS Modules dos componentes
+@import './components/grid/ep-grid.module.scss';
+@import './components/paper/ep-paper.module.scss';
+@import './components/typography/ep-typography.module.scss';
