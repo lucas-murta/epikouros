@@ -43,7 +43,7 @@ jobs:
         run: npx nx run-many -t build --parallel=3
 
       - name: Build Storybook
-        run: nx run ep-ds:build-storybook --output-dir=../../docs --skip-nx-cache
+        run: npx nx run ep-ds:build-storybook --output-dir=../../docs --skip-nx-cache
 
       - name: Release
         env:
