@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '../src/styles.scss';
 
 const preview: Preview = {
@@ -10,24 +11,17 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    themes: {
-      default: 'light',
-      list: [
-        {
-          name: 'light',
-          class: '',
-          color: '#ffffff',
-        },
-        {
-          name: 'dark',
-          class: '',
-          color: '#333333',
-        },
-      ],
-      target: 'root',
-      attribute: 'data-theme',
-    },
   },
+  decorators: [
+    withThemeByDataAttribute({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-theme',
+    }),
+  ],
 };
 
 export default preview;
