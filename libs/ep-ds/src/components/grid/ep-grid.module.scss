@@ -1,4 +1,4 @@
-@import '../../globals/spacings';
+@use '../../globals/index.scss' as *;
 
 .grid {
   display: grid;
@@ -27,71 +27,7 @@
   }
 }
 
-// Classes de padding
-@each $key, $value in $spacings {
-  .p-#{$key} {
-    padding: $value;
-  }
 
-  .pt-#{$key} {
-    padding-top: $value;
-  }
-
-  .pr-#{$key} {
-    padding-right: $value;
-  }
-
-  .pb-#{$key} {
-    padding-bottom: $value;
-  }
-
-  .pl-#{$key} {
-    padding-left: $value;
-  }
-
-  .px-#{$key} {
-    padding-left: $value;
-    padding-right: $value;
-  }
-
-  .py-#{$key} {
-    padding-top: $value;
-    padding-bottom: $value;
-  }
-}
-
-// Classes de margin
-@each $key, $value in $spacings {
-  .m-#{$key} {
-    margin: $value;
-  }
-
-  .mt-#{$key} {
-    margin-top: $value;
-  }
-
-  .mr-#{$key} {
-    margin-right: $value;
-  }
-
-  .mb-#{$key} {
-    margin-bottom: $value;
-  }
-
-  .ml-#{$key} {
-    margin-left: $value;
-  }
-
-  .mx-#{$key} {
-    margin-left: $value;
-    margin-right: $value;
-  }
-
-  .my-#{$key} {
-    margin-top: $value;
-    margin-bottom: $value;
-  }
-}
 
 // Responsividade
 @media (max-width: 640px) {
@@ -101,39 +37,7 @@
     }
   }
 
-  // Padding responsivo (sm)
-  @each $key, $value in $spacings {
-    .sm-p-#{$key} {
-      padding: $value;
-    }
 
-    .sm-px-#{$key} {
-      padding-left: $value;
-      padding-right: $value;
-    }
-
-    .sm-py-#{$key} {
-      padding-top: $value;
-      padding-bottom: $value;
-    }
-  }
-
-  // Margin responsivo (sm)
-  @each $key, $value in $spacings {
-    .sm-m-#{$key} {
-      margin: $value;
-    }
-
-    .sm-mx-#{$key} {
-      margin-left: $value;
-      margin-right: $value;
-    }
-
-    .sm-my-#{$key} {
-      margin-top: $value;
-      margin-bottom: $value;
-    }
-  }
 }
 
 @media (max-width: 768px) {
@@ -143,39 +47,7 @@
     }
   }
 
-  // Padding responsivo (md)
-  @each $key, $value in $spacings {
-    .md-p-#{$key} {
-      padding: $value;
-    }
 
-    .md-px-#{$key} {
-      padding-left: $value;
-      padding-right: $value;
-    }
-
-    .md-py-#{$key} {
-      padding-top: $value;
-      padding-bottom: $value;
-    }
-  }
-
-  // Margin responsivo (md)
-  @each $key, $value in $spacings {
-    .md-m-#{$key} {
-      margin: $value;
-    }
-
-    .md-mx-#{$key} {
-      margin-left: $value;
-      margin-right: $value;
-    }
-
-    .md-my-#{$key} {
-      margin-top: $value;
-      margin-bottom: $value;
-    }
-  }
 }
 
 @media (max-width: 1024px) {
@@ -185,37 +57,5 @@
     }
   }
 
-  // Padding responsivo (lg)
-  @each $key, $value in $spacings {
-    .lg-p-#{$key} {
-      padding: $value;
-    }
 
-    .lg-px-#{$key} {
-      padding-left: $value;
-      padding-right: $value;
-    }
-
-    .lg-py-#{$key} {
-      padding-top: $value;
-      padding-bottom: $value;
-    }
-  }
-
-  // Margin responsivo (lg)
-  @each $key, $value in $spacings {
-    .lg-m-#{$key} {
-      margin: $value;
-    }
-
-    .lg-mx-#{$key} {
-      margin-left: $value;
-      margin-right: $value;
-    }
-
-    .lg-my-#{$key} {
-      margin-top: $value;
-      margin-bottom: $value;
-    }
-  }
 }

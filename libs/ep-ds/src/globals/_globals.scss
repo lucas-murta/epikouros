@@ -1,0 +1,12 @@
+@use "./tokens" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-body;
+  background-color: $color-surface-1;
+  color: $color-content-default;
+}

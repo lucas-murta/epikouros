@@ -10,6 +10,23 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    themes: {
+      default: 'light',
+      list: [
+        {
+          name: 'light',
+          class: '',
+          color: '#ffffff',
+        },
+        {
+          name: 'dark',
+          class: '',
+          color: '#333333',
+        },
+      ],
+      target: 'root',
+      attribute: 'data-theme',
+    },
   },
 };
 

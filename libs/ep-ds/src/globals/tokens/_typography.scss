@@ -136,7 +136,7 @@ $typography-styles: (
       @return map-get(map-get($typography-styles, $style), $property);
     }
   }
-  
+
   @error "Estilo '#{$style}' ou propriedade '#{$property}' não encontrada.";
   @return null;
 }
@@ -144,14 +144,14 @@ $typography-styles: (
 // Mixins para aplicar estilos de tipografia
 @mixin typography($style) {
   $config: map-get($typography-styles, $style);
-  
+
   @if $config {
     font-family: map-get($config, 'font-family');
     font-size: map-get($config, 'font-size');
     font-weight: map-get($config, 'font-weight');
     line-height: map-get($config, 'line-height');
     letter-spacing: map-get($config, 'letter-spacing');
-    
+
     @if map-has-key($config, 'font-style') {
       font-style: map-get($config, 'font-style');
     }

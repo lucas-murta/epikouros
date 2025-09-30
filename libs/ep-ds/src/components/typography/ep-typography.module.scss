@@ -1,5 +1,4 @@
-@import '../../globals/typography';
-@import '../../globals/colors';
+@use '../../globals/index.scss' as *;
 
 .typography {
   margin: 0;

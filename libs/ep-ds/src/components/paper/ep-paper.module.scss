@@ -1,5 +1,4 @@
-@import '../../globals/colors';
-@import '../../globals/spacings';
+@use '../../globals/index.scss' as *;
 
 // Tokens de elevação para Paper
 $paper-shadow-0: 0 0 0 0 transparent;
@@ -13,143 +12,125 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   display: block;
   position: relative;
   transition: all 0.2s ease-in-out;
-  
+
   // Variantes de background
   &.surface-0 {
     background-color: $color-surface-0;
   }
-  
+
   &.surface-1 {
     background-color: $color-surface-1;
   }
-  
+
   &.surface-2 {
     background-color: $color-surface-2;
   }
-  
+
   &.surface-3 {
     background-color: $color-surface-3;
   }
-  
+
   &.surface-4 {
     background-color: $color-surface-4;
   }
-  
+
   &.primary {
     background-color: $color-primary;
     color: $color-content-bright;
   }
-  
+
   &.secondary {
     background-color: $color-secondary;
     color: $color-content-bright;
   }
-  
+
   // Variantes de borda
   &.border-none {
     border: none;
   }
-  
+
   &.border-1 {
     border: 1px solid $color-border-1;
   }
-  
+
   &.border-2 {
     border: 1px solid $color-border-2;
   }
-  
+
   &.border-3 {
     border: 1px solid $color-border-3;
   }
-  
+
   &.border-primary {
     border: 1px solid $color-primary;
   }
-  
+
   &.border-secondary {
     border: 1px solid $color-secondary;
   }
-  
+
   // Variantes de border-radius
   &.radius-none {
     border-radius: 0;
   }
-  
+
   &.radius-1 {
     border-radius: $spacing-1; // 8px
   }
-  
+
   &.radius-2 {
     border-radius: $spacing-2; // 16px
   }
-  
+
   // Variantes de elevação
   &.elevation-0 {
     box-shadow: $paper-shadow-0;
   }
-  
+
   &.elevation-1 {
     box-shadow: $paper-shadow-1;
   }
-  
+
   &.elevation-2 {
     box-shadow: $paper-shadow-2;
   }
-  
+
   &.elevation-3 {
     box-shadow: $paper-shadow-3;
   }
-  
+
   &.elevation-4 {
     box-shadow: $paper-shadow-4;
   }
-  
+
   // Estados interativos para elevação
   &.interactive {
     cursor: pointer;
-    
+
     &:hover {
       &.elevation-0 {
         box-shadow: $paper-shadow-1;
       }
-      
+
       &.elevation-1 {
         box-shadow: $paper-shadow-2;
       }
-      
+
       &.elevation-2 {
         box-shadow: $paper-shadow-3;
       }
-      
+
       &.elevation-3 {
         box-shadow: $paper-shadow-4;
       }
     }
-    
+
     &:active {
       transform: translateY(1px);
     }
   }
 }
 
-// Classes utilitárias para padding interno (legado)
-.paper-padding {
-  &.padding-1 {
-    padding: $spacing-1;
-  }
-  
-  &.padding-2 {
-    padding: $spacing-2;
-  }
-  
-  &.padding-3 {
-    padding: $spacing-3;
-  }
-  
-  &.padding-4 {
-    padding: $spacing-4;
-  }
-}
 
 // Classes de largura
 .w-auto { width: auto; }
@@ -226,7 +207,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .sm-w-fit-content { width: fit-content; }
   .sm-w-min-content { width: min-content; }
   .sm-w-max-content { width: max-content; }
-  
+
   .sm-w-1 { width: $spacing-1; }
   .sm-w-2 { width: $spacing-2; }
   .sm-w-3 { width: $spacing-3; }
@@ -239,7 +220,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .sm-w-10 { width: $spacing-10; }
   .sm-w-11 { width: $spacing-11; }
   .sm-w-12 { width: $spacing-12; }
-  
+
   .sm-w-16 { width: 4rem; }
   .sm-w-20 { width: 5rem; }
   .sm-w-24 { width: 6rem; }
@@ -251,6 +232,8 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .sm-w-72 { width: 18rem; }
   .sm-w-80 { width: 20rem; }
   .sm-w-96 { width: 24rem; }
+
+
 }
 
 @media (max-width: 768px) {
@@ -259,7 +242,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .md-w-fit-content { width: fit-content; }
   .md-w-min-content { width: min-content; }
   .md-w-max-content { width: max-content; }
-  
+
   .md-w-1 { width: $spacing-1; }
   .md-w-2 { width: $spacing-2; }
   .md-w-3 { width: $spacing-3; }
@@ -272,7 +255,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .md-w-10 { width: $spacing-10; }
   .md-w-11 { width: $spacing-11; }
   .md-w-12 { width: $spacing-12; }
-  
+
   .md-w-16 { width: 4rem; }
   .md-w-20 { width: 5rem; }
   .md-w-24 { width: 6rem; }
@@ -284,6 +267,8 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .md-w-72 { width: 18rem; }
   .md-w-80 { width: 20rem; }
   .md-w-96 { width: 24rem; }
+
+
 }
 
 @media (max-width: 1024px) {
@@ -292,7 +277,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .lg-w-fit-content { width: fit-content; }
   .lg-w-min-content { width: min-content; }
   .lg-w-max-content { width: max-content; }
-  
+
   .lg-w-1 { width: $spacing-1; }
   .lg-w-2 { width: $spacing-2; }
   .lg-w-3 { width: $spacing-3; }
@@ -305,7 +290,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .lg-w-10 { width: $spacing-10; }
   .lg-w-11 { width: $spacing-11; }
   .lg-w-12 { width: $spacing-12; }
-  
+
   .lg-w-16 { width: 4rem; }
   .lg-w-20 { width: 5rem; }
   .lg-w-24 { width: 6rem; }
@@ -326,7 +311,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .sm-h-fit-content { height: fit-content; }
   .sm-h-min-content { height: min-content; }
   .sm-h-max-content { height: max-content; }
-  
+
   .sm-h-1 { height: $spacing-1; }
   .sm-h-2 { height: $spacing-2; }
   .sm-h-3 { height: $spacing-3; }
@@ -339,7 +324,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .sm-h-10 { height: $spacing-10; }
   .sm-h-11 { height: $spacing-11; }
   .sm-h-12 { height: $spacing-12; }
-  
+
   .sm-h-16 { height: 4rem; }
   .sm-h-20 { height: 5rem; }
   .sm-h-24 { height: 6rem; }
@@ -359,7 +344,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .md-h-fit-content { height: fit-content; }
   .md-h-min-content { height: min-content; }
   .md-h-max-content { height: max-content; }
-  
+
   .md-h-1 { height: $spacing-1; }
   .md-h-2 { height: $spacing-2; }
   .md-h-3 { height: $spacing-3; }
@@ -372,7 +357,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .md-h-10 { height: $spacing-10; }
   .md-h-11 { height: $spacing-11; }
   .md-h-12 { height: $spacing-12; }
-  
+
   .md-h-16 { height: 4rem; }
   .md-h-20 { height: 5rem; }
   .md-h-24 { height: 6rem; }
@@ -392,7 +377,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .lg-h-fit-content { height: fit-content; }
   .lg-h-min-content { height: min-content; }
   .lg-h-max-content { height: max-content; }
-  
+
   .lg-h-1 { height: $spacing-1; }
   .lg-h-2 { height: $spacing-2; }
   .lg-h-3 { height: $spacing-3; }
@@ -405,7 +390,7 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .lg-h-10 { height: $spacing-10; }
   .lg-h-11 { height: $spacing-11; }
   .lg-h-12 { height: $spacing-12; }
-  
+
   .lg-h-16 { height: 4rem; }
   .lg-h-20 { height: 5rem; }
   .lg-h-24 { height: 6rem; }
@@ -417,4 +402,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
   .lg-h-72 { height: 18rem; }
   .lg-h-80 { height: 20rem; }
   .lg-h-96 { height: 24rem; }
+
+
 }
