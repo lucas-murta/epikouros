@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.3.0](https://github.com/lucas-murta/epikouros/compare/v1.2.1...v1.3.0) (2025-09-30)
+
+### ✨ Features
+
+- configure build of storybook ep-ds ([417c86d](https://github.com/lucas-murta/epikouros/commit/417c86d78d32260f47fd006d94ce4df6e8832b8f))
+
+### 🐛 Bug Fixes
+
+- configure build of storybook ep-ds ([cd1b118](https://github.com/lucas-murta/epikouros/commit/cd1b118e32d292f10ef159a248b4a8e740f9db4f))
+
 ## [1.2.1](https://github.com/lucas-murta/epikouros/compare/v1.2.0...v1.2.1) (2025-09-30)
 
 ### 🐛 Bug Fixes
