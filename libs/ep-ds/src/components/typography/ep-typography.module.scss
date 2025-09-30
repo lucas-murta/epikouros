@@ -43,45 +43,11 @@
   @include typography('body-small');
 }
 
-// Tamanhos de fonte
-.size-xs {
-  font-size: $font-size-xs;
-}
-
-.size-sm {
-  font-size: $font-size-sm;
-}
-
-.size-base {
-  font-size: $font-size-base;
-}
-
-.size-md {
-  font-size: $font-size-md;
-}
-
-.size-lg {
-  font-size: $font-size-lg;
-}
-
-.size-xl {
-  font-size: $font-size-xl;
-}
-
-.size-2xl {
-  font-size: $font-size-2xl;
-}
-
-.size-3xl {
-  font-size: $font-size-3xl;
-}
-
-.size-4xl {
-  font-size: $font-size-4xl;
-}
-
-.size-5xl {
-  font-size: $font-size-5xl;
+// Tamanhos de fonte baseados nos tokens de spacing (1-12)
+@each $key, $value in $spacings {
+  .size-#{$key} {
+    font-size: $value;
+  }
 }
 
 // Pesos de fonte

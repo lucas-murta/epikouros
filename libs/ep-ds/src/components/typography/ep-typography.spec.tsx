@@ -51,7 +51,7 @@ describe('EpTypography', () => {
   });
 
   describe('Font sizes', () => {
-    const sizes = ['xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'] as const;
+    const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
     sizes.forEach(size => {
       it(`should apply ${size} size class`, () => {
@@ -244,7 +244,7 @@ describe('EpTypography', () => {
       const { getByText } = render(
         <EpTypography
           variant="heading-1"
-          size="xl"
+          size={8}
           weight="bold"
           family="heading"
           lineHeight="tight"
@@ -262,7 +262,7 @@ describe('EpTypography', () => {
 
       expect(element.className).toContain('typography');
       expect(element.className).toContain('variant-heading-1');
-      expect(element.className).toContain('size-xl');
+      expect(element.className).toContain('size-8');
       expect(element.className).toContain('weight-bold');
       expect(element.className).toContain('family-heading');
       expect(element.className).toContain('line-height-tight');
@@ -278,7 +278,7 @@ describe('EpTypography', () => {
       const { getByText } = render(
         <EpTypography
           variant="body-small"
-          size="xl"
+          size={8}
           weight="bold"
         >
           Test content
@@ -287,7 +287,7 @@ describe('EpTypography', () => {
       const element = getByText('Test content');
 
       expect(element.className).toContain('variant-body-small');
-      expect(element.className).toContain('size-xl');
+      expect(element.className).toContain('size-8');
       expect(element.className).toContain('weight-bold');
     });
   });

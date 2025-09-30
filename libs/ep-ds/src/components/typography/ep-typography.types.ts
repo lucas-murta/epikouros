@@ -12,18 +12,8 @@ export type TypographyVariant =
   | 'body-medium' 
   | 'body-small';
 
-// Font sizes based on _typography.scss
-export type FontSize = 
-  | 'xs'    // 0.75rem
-  | 'sm'    // 0.875rem
-  | 'base'  // 1rem
-  | 'lg'    // 1.125rem
-  | 'xl'    // 1.25rem
-  | '2xl'   // 1.5rem
-  | '3xl'   // 1.875rem
-  | '4xl'   // 2.25rem
-  | '5xl'   // 3rem
-  | '6xl';  // 3.75rem
+// Font sizes based on spacing tokens (1-12)
+export type FontSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 // Font weights based on _typography.scss
 export type FontWeight = 
