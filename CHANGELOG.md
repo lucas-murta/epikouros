@@ -6,6 +6,12 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 
+## [1.0.1](https://github.com/lucas-murta/epikouros/compare/v1.0.0...v1.0.1) (2025-09-30)
+
+### 🐛 Bug Fixes
+
+* remove Cypress e2e testing framework ([3831bae](https://github.com/lucas-murta/epikouros/commit/3831baeb74da7fac87c46ad8c2d3dee8eb46233d))
+
 ## 1.0.0 (2025-09-30)
 
 ### ⚠ BREAKING CHANGES
