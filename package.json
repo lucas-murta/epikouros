@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "serve:web-view": "npx nx serve web-view",
+    "build:web-view": "npx nx build web-view",
+    "test": "npx nx test",
+    "lint": "npx nx lint",
+    "storybook": "npx nx storybook ep-ds",
+    "build-storybook": "npx nx build-storybook ep-ds",
     "release": "semantic-release",
     "release:dry-run": "semantic-release --dry-run",
     "release:no-ci": "semantic-release --no-ci",
