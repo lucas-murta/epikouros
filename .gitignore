@@ -49,3 +49,6 @@ test-output
 
 
 storybook-static
+
+# Storybook build output
+docs/
