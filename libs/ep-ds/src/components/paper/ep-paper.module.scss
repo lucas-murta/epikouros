@@ -405,3 +405,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0, 0 10px 10px -5px $color-shado
 
 
 }
+
+// Incluir classes de spacing (padding e margin)
+@include generate-responsive-spacing-classes();
