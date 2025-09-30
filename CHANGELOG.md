@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.2.0](https://github.com/lucas-murta/epikouros/compare/v1.1.0...v1.2.0) (2025-09-30)
+
+### ✨ Features
+
+- update README with project description, logo and npm scripts ([86dff3d](https://github.com/lucas-murta/epikouros/commit/86dff3df71e72670ff676d2da1a8740e18e097b9))
+
 ## [1.1.0](https://github.com/lucas-murta/epikouros/compare/v1.0.1...v1.1.0) (2025-09-30)
 
 ### ✨ Features
