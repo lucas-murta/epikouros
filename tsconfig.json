@@ -4,9 +4,6 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/web-view-e2e"
-    },
-    {
       "path": "./apps/web-view"
     },
     {
