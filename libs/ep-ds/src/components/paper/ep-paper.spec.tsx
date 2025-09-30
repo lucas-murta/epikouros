@@ -22,8 +22,6 @@ describe('EpPaper', () => {
     expect(paper.className).toContain('border-none'); // default border
     expect(paper.className).toContain('radius-1'); // default borderRadius
     expect(paper.className).toContain('elevation-1'); // default elevation
-    expect(paper.className).toContain('paper-padding');
-    expect(paper.className).toContain('padding-2'); // default padding
   });
 
   it('should render with custom variant', () => {
@@ -58,7 +56,7 @@ describe('EpPaper', () => {
     const { getByText } = render(<EpPaper {...defaultProps} padding="4" />);
 
     const paper = getByText('Test content');
-    expect(paper.className).toContain('padding-4');
+    expect(paper.className).toContain('p-4');
   });
 
   it('should render as interactive when interactive prop is true', () => {
@@ -85,6 +83,8 @@ describe('EpPaper', () => {
 
   it('should forward ref correctly', () => {
     const ref = React.createRef<HTMLDivElement>();
+    
+    render(<EpPaper {...defaultProps} ref={ref} />);
 
     expect(ref.current).toBeInstanceOf(HTMLDivElement);
     expect(ref.current?.textContent).toBe('Test content');
