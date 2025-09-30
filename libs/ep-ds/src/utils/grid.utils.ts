@@ -1,17 +1,18 @@
 import { processSpacingShorthand } from './spacing.utils';
+import { GridSpacing } from '../components/grid/ep-grid.types';
 
 /**
  * Constrói as classes CSS para o componente Grid
  */
 export function buildGridClasses(
   props: {
-    cols?: number;
-    gap?: number;
-    gapX?: number;
-    gapY?: number;
-    smCols?: number;
-    mdCols?: number;
-    lgCols?: number;
+    cols?: GridSpacing;
+    gap?: GridSpacing;
+    gapX?: GridSpacing;
+    gapY?: GridSpacing;
+    smCols?: GridSpacing;
+    mdCols?: GridSpacing;
+    lgCols?: GridSpacing;
     padding?: string;
     smPadding?: string;
     mdPadding?: string;
