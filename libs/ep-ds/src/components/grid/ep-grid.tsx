@@ -2,7 +2,7 @@ import styles from './ep-grid.module.scss';
 import { GridProps } from './ep-grid.types';
 import { buildGridClasses } from '../../utils/grid.utils';
 
-export function Grid({
+export function EpGrid({
   cols = 1,
   gap,
   gapX,
@@ -47,4 +47,4 @@ export function Grid({
   );
 }
 
-export default Grid;
+export default EpGrid;
