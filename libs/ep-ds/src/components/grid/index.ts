@@ -1,4 +1,4 @@
-export { Grid } from './ep-grid';
+export { EpGrid } from './ep-grid';
 export type { 
   GridProps, 
   GridSpacing 
