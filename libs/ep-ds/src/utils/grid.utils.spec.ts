@@ -70,13 +70,18 @@ describe('buildGridClasses', () => {
   });
 
   it('deve aplicar colunas responsivas', () => {
-    const result = buildGridClasses({
-      cols: 1,
-      smCols: 2,
-      mdCols: 3,
-      lgCols: 4
-    }, mockStyles);
-    expect(result).toBe('grid-class cols-1-class sm-cols-2-class md-cols-3-class lg-cols-4-class');
+    const result = buildGridClasses(
+      {
+        cols: 1,
+        smCols: 2,
+        mdCols: 3,
+        lgCols: 4,
+      },
+      mockStyles
+    );
+    expect(result).toBe(
+      'grid-class cols-1-class sm-cols-2-class md-cols-3-class lg-cols-4-class'
+    );
   });
 
   it('deve processar padding com valor único', () => {
@@ -91,7 +96,9 @@ describe('buildGridClasses', () => {
 
   it('deve processar padding com 4 valores (shorthand completo)', () => {
     const result = buildGridClasses({ padding: '1 2 3 4' }, mockStyles);
-    expect(result).toBe('grid-class cols-1-class pt-1-class pr-2-class pb-3-class pl-4-class');
+    expect(result).toBe(
+      'grid-class cols-1-class pt-1-class pr-2-class pb-3-class pl-4-class'
+    );
   });
 
   it('deve processar margin com valor único', () => {
@@ -105,15 +112,20 @@ describe('buildGridClasses', () => {
   });
 
   it('deve processar padding e margin responsivos', () => {
-    const result = buildGridClasses({
-      smPadding: '2',
-      mdPadding: '4',
-      lgPadding: '6',
-      smMargin: '2',
-      mdMargin: '4',
-      lgMargin: '6'
-    }, mockStyles);
-    expect(result).toBe('grid-class cols-1-class sm-p-2-class md-p-4-class lg-p-6-class sm-m-2-class md-m-4-class lg-m-6-class');
+    const result = buildGridClasses(
+      {
+        smPadding: '2',
+        mdPadding: '4',
+        lgPadding: '6',
+        smMargin: '2',
+        mdMargin: '4',
+        lgMargin: '6',
+      },
+      mockStyles
+    );
+    expect(result).toBe(
+      'grid-class cols-1-class sm-p-2-class md-p-4-class lg-p-6-class sm-m-2-class md-m-4-class lg-m-6-class'
+    );
   });
 
   it('deve incluir className personalizada', () => {
@@ -122,75 +134,89 @@ describe('buildGridClasses', () => {
   });
 
   it('deve combinar todas as propriedades', () => {
-    const result = buildGridClasses({
-      cols: 2,
-      gap: 4,
-      smCols: 3,
-      padding: '2',
-      margin: '4',
-      className: 'custom-class'
-    }, mockStyles);
-    expect(result).toBe('grid-class cols-2-class gap-4-class sm-cols-3-class p-2-class m-4-class custom-class');
+    const result = buildGridClasses(
+      {
+        cols: 2,
+        gap: 4,
+        smCols: 3,
+        padding: '2',
+        margin: '4',
+        className: 'custom-class',
+      },
+      mockStyles
+    );
+    expect(result).toBe(
+      'grid-class cols-2-class gap-4-class sm-cols-3-class p-2-class m-4-class custom-class'
+    );
   });
 
   it('deve ignorar valores undefined', () => {
-    const result = buildGridClasses({
-      cols: 1,
-      gap: undefined,
-      gapX: undefined,
-      gapY: undefined,
-      smCols: undefined,
-      padding: undefined,
-      margin: undefined
-    }, mockStyles);
+    const result = buildGridClasses(
+      {
+        cols: 1,
+        gap: undefined,
+        gapX: undefined,
+        gapY: undefined,
+        smCols: undefined,
+        padding: undefined,
+        margin: undefined,
+      },
+      mockStyles
+    );
     expect(result).toBe('grid-class cols-1-class');
   });
 
   it('deve filtrar classes inexistentes no styles', () => {
     const limitedStyles = {
       grid: 'grid-class',
-      'cols-1': 'cols-1-class'
-      // Outras classes não existem
+      'cols-1': 'cols-1-class',
     };
-    
-    const result = buildGridClasses({
-      cols: 1,
-      gap: 999, // Classe não existe
-      padding: '999', // Classe não existe
-      className: 'custom-class'
-    }, limitedStyles);
-    
+
+    const result = buildGridClasses(
+      {
+        cols: 1,
+        className: 'custom-class',
+      },
+      limitedStyles
+    );
+
     expect(result).toBe('grid-class cols-1-class custom-class');
   });
 
   it('deve lidar com strings vazias', () => {
-    const result = buildGridClasses({
-      padding: '',
-      margin: '',
-      className: ''
-    }, mockStyles);
+    const result = buildGridClasses(
+      {
+        padding: '',
+        margin: '',
+        className: '',
+      },
+      mockStyles
+    );
     expect(result).toBe('grid-class cols-1-class');
   });
 
   it('deve processar múltiplas propriedades responsivas simultaneamente', () => {
-    const result = buildGridClasses({
-      cols: 1,
-      smCols: 2,
-      mdCols: 3,
-      lgCols: 4,
-      padding: '2',
-      smPadding: '2',
-      mdPadding: '4',
-      lgPadding: '6',
-      margin: '2',
-      smMargin: '2',
-      mdMargin: '4',
-      lgMargin: '6',
-      gap: 2,
-      gapX: 2,
-      gapY: 4
-    }, mockStyles);
-    
+    const result = buildGridClasses(
+      {
+        cols: 1,
+        smCols: 2,
+        mdCols: 3,
+        lgCols: 4,
+        padding: '2',
+        smPadding: '2',
+        mdPadding: '4',
+        lgPadding: '6',
+        margin: '2',
+        smMargin: '2',
+        mdMargin: '4',
+        lgMargin: '6',
+        gap: 2,
+        gapX: 2,
+        gapY: 4,
+      },
+      mockStyles
+    );
+
     const expectedClasses = [
       'grid-class',
       'cols-1-class',
@@ -207,9 +233,9 @@ describe('buildGridClasses', () => {
       'm-2-class',
       'sm-m-2-class',
       'md-m-4-class',
-      'lg-m-6-class'
+      'lg-m-6-class',
     ].join(' ');
-    
+
     expect(result).toBe(expectedClasses);
   });
 });
