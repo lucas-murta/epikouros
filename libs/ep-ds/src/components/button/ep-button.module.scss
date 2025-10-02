@@ -44,9 +44,9 @@
 
 .color-secondary {
   --btn-bg: #{$color-secondary};
-  // Para outline/text, o texto acompanha a cor selecionada
-  // Não há token de conteúdo "secondary", usamos a própria cor secundária
-  --btn-fg: #{$color-secondary};
+  // Para outline/text, usar um token de conteúdo adequado
+  // Fallback: conteúdo padrão por não existir content-secondary
+  --btn-fg: #{$color-content-default};
   --btn-border: #{$color-secondary};
 }
 
