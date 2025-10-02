@@ -1,0 +1,85 @@
+@use '../../globals/index.scss' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family-body;
+  color: $color-content-bright;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+// Tamanhos
+.size-small {
+  height: 32px; // spacing-4
+  padding: 0 $spacing-2; // 16px lateral
+  font-size: $font-size-sm;
+}
+
+.size-medium {
+  height: 40px; // spacing-5
+  padding: 0 $spacing-2; // 16px lateral
+  font-size: $font-size-base;
+}
+
+.size-large {
+  height: 48px; // spacing-6
+  padding: 0 $spacing-2; // 16px lateral
+  font-size: $font-size-md;
+}
+
+// Cores base
+.color-primary {
+  --btn-bg: #{$color-primary};
+  --btn-fg: #{$color-content-bright};
+  --btn-border: #{$color-primary};
+}
+
+.color-secondary {
+  --btn-bg: #{$color-secondary};
+  --btn-fg: #{$color-content-bright};
+  --btn-border: #{$color-secondary};
+}
+
+// Variantes
+.variant-solid {
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+  border: 1px solid var(--btn-border);
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.variant-outline {
+  background-color: transparent;
+  color: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+
+  &:hover {
+    background-color: rgba(0,0,0,0.04);
+  }
+}
+
+.variant-text {
+  background-color: transparent;
+  color: var(--btn-bg);
+  border: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.disabled {
+  background-color: $color-surface-3 !important;
+  color: $color-content-disable !important;
+  border-color: $color-border-2 !important;
+  cursor: not-allowed;
+  opacity: 0.8;
+  pointer-events: none;
+}
