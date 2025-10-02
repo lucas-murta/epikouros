@@ -9,7 +9,7 @@
   --color-surface-4: rgb(24, 24, 24);
   --color-surface-positive: rgb(1, 86, 47);
   --color-surface-negative: rgb(87, 0, 0);
-  --color-surface-primary: rgb(12, 80, 197);
+  --color-surface-primary: var(--color-primary);
   --color-content-default: rgb(255, 255, 255);
   --color-content-disable: rgb(148, 148, 148);
   --color-content-ghost: rgb(102, 102, 102);
