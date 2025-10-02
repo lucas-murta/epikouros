@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.8.0](https://github.com/lucas-murta/epikouros/compare/v1.7.0...v1.8.0) (2025-10-02)
+
+### ✨ Features
+
+- **ep-paper:** add new surface variants; update border to use content tokens; update stories and tests ([0d8110e](https://github.com/lucas-murta/epikouros/commit/0d8110ee72c43c2e452c47dc79f218a34299799b))
+
+### ♻️ Code Refactoring
+
+- **ep-paper:** remove primary/secondary from variant; update stories, tests, and examples ([284ef9f](https://github.com/lucas-murta/epikouros/commit/284ef9f98922ce48d8abf891c6283e106f523e41))
+
 ## [1.7.0](https://github.com/lucas-murta/epikouros/compare/v1.6.0...v1.7.0) (2025-10-02)
 
 ### ✨ Features
