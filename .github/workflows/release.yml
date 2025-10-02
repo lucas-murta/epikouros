@@ -11,6 +11,7 @@ permissions:
   issues: write
   pull-requests: write
   id-token: write
+  pages: write
 
 jobs:
   release:
@@ -45,10 +46,49 @@ jobs:
       - name: Build Storybook
         run: npx nx run ep-ds:build-storybook --output-dir=../../docs --skip-nx-cache
 
+      - name: Upload site artifact (docs)
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: docs
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
+
+  # Deploy GitHub Pages após concluir a release com sucesso
+  deploy-pages:
+    name: Deploy GitHub Pages
+    runs-on: ubuntu-latest
+    needs: release
+    if: ${{ needs.release.result == 'success' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: docs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
   # Job para notificar sobre falhas
   notify-failure:
