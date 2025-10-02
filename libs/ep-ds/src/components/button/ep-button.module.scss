@@ -37,16 +37,15 @@
 // Cores base
 .color-primary {
   --btn-bg: #{$color-primary};
-  // Texto para outline/text deve usar o conteúdo padrão
-  --btn-fg: #{$color-content-default};
+  // Para outline/text, o texto acompanha a mesma cor da borda (primary)
+  --btn-fg: #{$color-primary};
   --btn-border: #{$color-primary};
 }
 
 .color-secondary {
   --btn-bg: #{$color-secondary};
-  // Para outline/text, usar um token de conteúdo adequado
-  // Fallback: conteúdo padrão por não existir content-secondary
-  --btn-fg: #{$color-content-default};
+  // Para outline/text, o texto acompanha a mesma cor da borda (secondary)
+  --btn-fg: #{$color-secondary};
   --btn-border: #{$color-secondary};
 }
 
