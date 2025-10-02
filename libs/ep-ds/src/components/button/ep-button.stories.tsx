@@ -49,32 +49,3 @@ export const Default: Story = {
     color: 'primary',
   },
 };
-
-export const Variants: Story = {
-  render: (args) => (
-    <div style={{ display: 'flex', gap: 12 }}>
-      <EpButton {...args} variant="solid">Solid</EpButton>
-      <EpButton {...args} variant="outline">Outline</EpButton>
-      <EpButton {...args} variant="text">Text</EpButton>
-    </div>
-  ),
-};
-
-export const Sizes: Story = {
-  render: (args) => (
-    <div style={{ display: 'flex', gap: 12 }}>
-      <EpButton {...args} size="small">Small</EpButton>
-      <EpButton {...args} size="medium">Medium</EpButton>
-      <EpButton {...args} size="large">Large</EpButton>
-    </div>
-  ),
-};
-
-export const Colors: Story = {
-  render: (args) => (
-    <div style={{ display: 'flex', gap: 12 }}>
-      <EpButton {...args} color="primary">Primary</EpButton>
-      <EpButton {...args} color="secondary">Secondary</EpButton>
-    </div>
-  ),
-};
