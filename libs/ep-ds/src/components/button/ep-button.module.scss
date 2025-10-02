@@ -61,10 +61,11 @@
   --btn-border: #{$color-content-negative};
 }
 
-.color-warning {
-  --btn-bg: #{$color-surface-warning};
-  --btn-fg: #{$color-content-warning};
-  --btn-border: #{$color-content-warning};
+// Valor genérico de status para solid
+.color-status {
+  --btn-bg: #{$color-status-focus};
+  --btn-fg: #{$color-content-bright};
+  --btn-border: #{$color-status-focus};
 }
 
 // Variantes

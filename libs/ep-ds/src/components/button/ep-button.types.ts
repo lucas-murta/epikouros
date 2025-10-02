@@ -7,7 +7,7 @@ export type ButtonColor =
   | 'secondary'
   | 'positive'
   | 'negative'
-  | 'warning';
+  | 'status';
 
 export interface EpButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'color'> {
