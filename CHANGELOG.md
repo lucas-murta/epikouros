@@ -5,6 +5,17 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.6.0](https://github.com/lucas-murta/epikouros/compare/v1.5.0...v1.6.0) (2025-10-02)
+
+### ✨ Features
+
+- **ep-ds:** add color-content-primery token and define light/dark values ([413b76b](https://github.com/lucas-murta/epikouros/commit/413b76bcdec3ee8988718badcf1429d9706e4db2))
+
+### ♻️ Code Refactoring
+
+- **ep-ds:** remove legacy status vars, fix surface-primary values, and rename color-content-primary ([38f2e63](https://github.com/lucas-murta/epikouros/commit/38f2e633d097870a82ada94cde737616876cf4fa))
+- **ep-ds:** standardize status color tokens to color-status-\* and map legacy tokens ([6fb06ac](https://github.com/lucas-murta/epikouros/commit/6fb06acba14c66310439b4d2b87999d1abcad4c7))
+
 ## [1.5.0](https://github.com/lucas-murta/epikouros/compare/v1.4.1...v1.5.0) (2025-10-02)
 
 ### ✨ Features
