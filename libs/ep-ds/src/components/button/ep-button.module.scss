@@ -37,13 +37,16 @@
 // Cores base
 .color-primary {
   --btn-bg: #{$color-primary};
+  // Texto para outline/text deve usar o token de conteúdo selecionado
   --btn-fg: #{$color-content-primary};
   --btn-border: #{$color-primary};
 }
 
 .color-secondary {
   --btn-bg: #{$color-secondary};
-  --btn-fg: #{$color-content-primary};
+  // Para outline/text, o texto acompanha a cor selecionada
+  // Não há token de conteúdo "secondary", usamos a própria cor secundária
+  --btn-fg: #{$color-secondary};
   --btn-border: #{$color-secondary};
 }
 
@@ -51,27 +54,21 @@
 .color-positive {
   // Usamos superfície para fundo e content para texto/borda
   --btn-bg: #{$color-surface-positive};
-  --btn-fg: #{$color-content-primary};
+  --btn-fg: #{$color-content-positive};
   --btn-border: #{$color-content-positive};
 }
 
 .color-negative {
   --btn-bg: #{$color-surface-negative};
-  --btn-fg: #{$color-content-primary};
+  --btn-fg: #{$color-content-negative};
   --btn-border: #{$color-content-negative};
-}
-
-// Valor genérico de status para solid
-.color-status {
-  --btn-bg: #{$color-status-focus};
-  --btn-fg: #{$color-content-primary};
-  --btn-border: #{$color-status-focus};
 }
 
 // Variantes
 .variant-solid {
   background-color: var(--btn-bg);
-  color: var(--btn-fg);
+  // Para solid, o texto sempre usa color-content-primary
+  color: #{$color-content-primary};
   border: 1px solid var(--btn-border);
 
   &:hover {
@@ -92,10 +89,6 @@
 
 .variant-solid.color-negative {
   --btn-bg: #{$color-status-negative};
-}
-
-.variant-solid.color-status {
-  --btn-bg: #{$color-status-focus};
 }
 
 .variant-outline {
