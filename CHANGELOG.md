@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.7.0](https://github.com/lucas-murta/epikouros/compare/v1.6.0...v1.7.0) (2025-10-02)
+
+### ✨ Features
+
+- **ep-ds:** add surface/info-system-warning and content counterparts; add content-positive/negative; remove redundant status variants ([8a39c25](https://github.com/lucas-murta/epikouros/commit/8a39c25acb4245a4d50167fef0f40efb89c4d3a2))
+
+### 🐛 Bug Fixes
+
+- **ep-ds:** set color-content-warning equal to color-content-default values (light/dark) ([1ea5a14](https://github.com/lucas-murta/epikouros/commit/1ea5a14c7cae47e174e98a8373876b0274d39a14))
+
 ## [1.6.0](https://github.com/lucas-murta/epikouros/compare/v1.5.0...v1.6.0) (2025-10-02)
 
 ### ✨ Features
