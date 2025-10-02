@@ -1,73 +1,71 @@
 import { ReactNode, HTMLAttributes, ElementType } from 'react';
 import { SizeValue } from '../../utils/paper.utils';
 
-export type PaperVariant = 
-  | 'surface-0' 
-  | 'surface-1' 
-  | 'surface-2' 
-  | 'surface-3' 
-  | 'surface-4' 
-  | 'primary' 
+export type PaperVariant =
+  | 'surface-0'
+  | 'surface-1'
+  | 'surface-2'
+  | 'surface-3'
+  | 'surface-4'
+  | 'surface-info'
+  | 'surface-system'
+  | 'surface-warning'
+  | 'surface-positive'
+  | 'surface-negative'
+  | 'surface-primary'
+  | 'primary'
   | 'secondary';
 
-export type PaperBorder = 
-  | 'none' 
-  | '1' 
-  | '2' 
-  | '3' 
-  | 'primary' 
-  | 'secondary';
+export type PaperBorder =
+  | 'none'
+  | '1'
+  | '2'
+  | '3'
+  | 'primary'
+  | 'secondary'
+  | 'info'
+  | 'system'
+  | 'warning'
+  | 'positive'
+  | 'negative';
 
-export type PaperBorderRadius = 
-  | 'none' 
-  | '1' 
-  | '2';
+export type PaperBorderRadius = 'none' | '1' | '2';
 
-export type PaperElevation = 
-  | 0 
-  | 1 
-  | 2 
-  | 3 
-  | 4;
+export type PaperElevation = 0 | 1 | 2 | 3 | 4;
 
-export type PaperPadding = 
-  | '1' 
-  | '2' 
-  | '3' 
-  | '4';
+export type PaperPadding = '1' | '2' | '3' | '4';
 
-export interface EpPaperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
+export interface EpPaperProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
    * Conteúdo do Paper
    */
   children: ReactNode;
-  
+
   /**
    * Variante de cor de fundo do Paper
    * @default 'surface-1'
    */
   variant?: PaperVariant;
-  
+
   /**
    * Tipo de borda do Paper
    * @default 'none'
    */
   border?: PaperBorder;
-  
+
   /**
    * Border radius do Paper
    * @default '1'
    */
   borderRadius?: PaperBorderRadius;
-  
+
   /**
    * Nível de elevação (sombra) do Paper
    * @default 1
    */
   elevation?: PaperElevation;
-  
 
-  
   /**
    * Se o Paper deve ter comportamento interativo (hover effects)
    * @default false
@@ -84,8 +82,6 @@ export interface EpPaperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'clas
    * Altura do Paper
    */
   height?: SizeValue;
-
-
 
   // Propriedades de spacing (novo formato)
   /**
@@ -129,12 +125,12 @@ export interface EpPaperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'clas
    * Margin para telas grandes (max-width: 1024px)
    */
   marginLg?: string;
-  
+
   /**
    * Classes CSS adicionais
    */
   className?: string;
-  
+
   /**
    * Elemento HTML a ser renderizado
    * @default 'div'
