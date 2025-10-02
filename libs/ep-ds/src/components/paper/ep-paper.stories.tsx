@@ -28,8 +28,6 @@ const meta: Meta<typeof EpPaper> = {
         'surface-positive',
         'surface-negative',
         'surface-primary',
-        'primary',
-        'secondary',
       ],
     },
     border: {

@@ -26,11 +26,11 @@ describe('EpPaper', () => {
 
   it('should render with custom variant', () => {
     const { getByText } = render(
-      <EpPaper {...defaultProps} variant="primary" />
+      <EpPaper {...defaultProps} variant="surface-info" />
     );
 
     const paper = getByText('Test content');
-    expect(paper.className).toContain('primary');
+    expect(paper.className).toContain('surface-info');
   });
 
   it('should render with custom border', () => {
@@ -131,18 +131,7 @@ describe('EpPaper', () => {
       });
     });
 
-    it('should render color variants correctly', () => {
-      const variants = ['primary', 'secondary'] as const;
-
-      variants.forEach((variant) => {
-        const { getByText, unmount } = render(
-          <EpPaper variant={variant}>Content</EpPaper>
-        );
-        const paper = getByText('Content');
-        expect(paper.className).toContain(variant);
-        unmount();
-      });
-    });
+    // Removed color variants 'primary' and 'secondary'
   });
 
   describe('border combinations', () => {

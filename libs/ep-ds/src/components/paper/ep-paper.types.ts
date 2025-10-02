@@ -12,9 +12,7 @@ export type PaperVariant =
   | 'surface-warning'
   | 'surface-positive'
   | 'surface-negative'
-  | 'surface-primary'
-  | 'primary'
-  | 'secondary';
+  | 'surface-primary';
 
 export type PaperBorder =
   | 'none'
