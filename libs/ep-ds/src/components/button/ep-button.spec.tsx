@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { EpButton } from './ep-button';
 
@@ -14,7 +13,9 @@ describe('EpButton', () => {
   });
 
   it('should apply size variants', () => {
-    const { getByText, rerender } = render(<EpButton size="small">Size</EpButton>);
+    const { getByText, rerender } = render(
+      <EpButton size="small">Size</EpButton>
+    );
     expect(getByText('Size').className).toContain('size-small');
     rerender(<EpButton size="medium">Size</EpButton>);
     expect(getByText('Size').className).toContain('size-medium');
@@ -23,7 +24,9 @@ describe('EpButton', () => {
   });
 
   it('should apply variant styles', () => {
-    const { getByText, rerender } = render(<EpButton variant="solid">Var</EpButton>);
+    const { getByText, rerender } = render(
+      <EpButton variant="solid">Var</EpButton>
+    );
     expect(getByText('Var').className).toContain('variant-solid');
     rerender(<EpButton variant="outline">Var</EpButton>);
     expect(getByText('Var').className).toContain('variant-outline');
@@ -32,7 +35,9 @@ describe('EpButton', () => {
   });
 
   it('should apply color styles', () => {
-    const { getByText, rerender } = render(<EpButton color="primary">Color</EpButton>);
+    const { getByText, rerender } = render(
+      <EpButton color="primary">Color</EpButton>
+    );
     expect(getByText('Color').className).toContain('color-primary');
     rerender(<EpButton color="secondary">Color</EpButton>);
     expect(getByText('Color').className).toContain('color-secondary');
@@ -54,7 +59,11 @@ describe('EpButton', () => {
 
   it('should not fire onClick when disabled', () => {
     const onClick = jest.fn();
-    const { getByText } = render(<EpButton disabled onClick={onClick}>Click</EpButton>);
+    const { getByText } = render(
+      <EpButton disabled onClick={onClick}>
+        Click
+      </EpButton>
+    );
     fireEvent.click(getByText('Click'));
     expect(onClick).not.toHaveBeenCalled();
   });
