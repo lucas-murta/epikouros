@@ -41,6 +41,12 @@ describe('EpButton', () => {
     expect(getByText('Color').className).toContain('color-primary');
     rerender(<EpButton color="secondary">Color</EpButton>);
     expect(getByText('Color').className).toContain('color-secondary');
+    rerender(<EpButton color="positive">Color</EpButton>);
+    expect(getByText('Color').className).toContain('color-positive');
+    rerender(<EpButton color="negative">Color</EpButton>);
+    expect(getByText('Color').className).toContain('color-negative');
+    rerender(<EpButton color="warning">Color</EpButton>);
+    expect(getByText('Color').className).toContain('color-warning');
   });
 
   it('should handle disabled state', () => {

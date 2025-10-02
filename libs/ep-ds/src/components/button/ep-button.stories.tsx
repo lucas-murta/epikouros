@@ -24,7 +24,7 @@ const meta: Meta<typeof EpButton> = {
     },
     color: {
       control: 'select',
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'positive', 'negative', 'warning'],
       description: 'Cor baseada em tokens globais',
     },
     disabled: {

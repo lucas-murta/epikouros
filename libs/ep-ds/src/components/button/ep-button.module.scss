@@ -47,6 +47,26 @@
   --btn-border: #{$color-secondary};
 }
 
+// Status colors
+.color-positive {
+  // Usamos superfície para fundo e content para texto/borda
+  --btn-bg: #{$color-surface-positive};
+  --btn-fg: #{$color-content-positive};
+  --btn-border: #{$color-content-positive};
+}
+
+.color-negative {
+  --btn-bg: #{$color-surface-negative};
+  --btn-fg: #{$color-content-negative};
+  --btn-border: #{$color-content-negative};
+}
+
+.color-warning {
+  --btn-bg: #{$color-surface-warning};
+  --btn-fg: #{$color-content-warning};
+  --btn-border: #{$color-content-warning};
+}
+
 // Variantes
 .variant-solid {
   background-color: var(--btn-bg);
@@ -66,7 +86,8 @@
 
 .variant-outline {
   background-color: transparent;
-  color: var(--btn-bg);
+  // O texto deve acompanhar o token de conteúdo/borda
+  color: var(--btn-border);
   border: 1px solid var(--btn-border);
 
   &:hover {
@@ -80,7 +101,8 @@
 
 .variant-text {
   background-color: transparent;
-  color: var(--btn-bg);
+  // Texto usa tokens de conteúdo
+  color: var(--btn-border);
   border: none;
 
   &:hover {
