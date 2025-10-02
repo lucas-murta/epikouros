@@ -37,8 +37,8 @@
 // Cores base
 .color-primary {
   --btn-bg: #{$color-primary};
-  // Texto para outline/text deve usar o token de conteúdo selecionado
-  --btn-fg: #{$color-content-primary};
+  // Texto para outline/text deve usar o conteúdo padrão
+  --btn-fg: #{$color-content-default};
   --btn-border: #{$color-primary};
 }
 
