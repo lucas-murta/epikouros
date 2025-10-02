@@ -5,6 +5,13 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.5.0](https://github.com/lucas-murta/epikouros/compare/v1.4.1...v1.5.0) (2025-10-02)
+
+### ✨ Features
+
+- **ep-ds:** add border-radius by size (small/medium=1, large=2) ([caf210c](https://github.com/lucas-murta/epikouros/commit/caf210c87307fffe4e9543aec959a7d51c2c91f1))
+- **ep-ds:** add EpButton component with variants, sizes, colors, disabled and stories/tests ([20ee378](https://github.com/lucas-murta/epikouros/commit/20ee37844623f52eae48438a3ee651f31d6b674b))
+
 ## [1.4.1](https://github.com/lucas-murta/epikouros/compare/v1.4.0...v1.4.1) (2025-10-02)
 
 ### 🐛 Bug Fixes
