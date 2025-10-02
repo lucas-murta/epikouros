@@ -17,18 +17,24 @@
   height: 32px; // spacing-4
   padding: 0 $spacing-2; // 16px lateral
   font-size: $font-size-sm;
+  // Borda arredondada conforme tokens
+  border-radius: $spacing-1;
 }
 
 .size-medium {
   height: 40px; // spacing-5
   padding: 0 $spacing-2; // 16px lateral
   font-size: $font-size-base;
+  // Borda arredondada conforme tokens
+  border-radius: $spacing-1;
 }
 
 .size-large {
   height: 48px; // spacing-6
   padding: 0 $spacing-2; // 16px lateral
   font-size: $font-size-md;
+  // Borda arredondada conforme tokens
+  border-radius: $spacing-2;
 }
 
 // Cores base
