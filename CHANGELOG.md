@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.4.0](https://github.com/lucas-murta/epikouros/compare/v1.3.0...v1.4.0) (2025-10-02)
+
+### ✨ Features
+
+- create-static-yml ([a6365f7](https://github.com/lucas-murta/epikouros/commit/a6365f7ec48f7d4ac2f865adc149b0ac8fbbd5f7))
+
 ## [1.3.0](https://github.com/lucas-murta/epikouros/compare/v1.2.1...v1.3.0) (2025-09-30)
 
 ### ✨ Features
