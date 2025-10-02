@@ -4,3 +4,5 @@ export * from './typography';
 export { EpTypography } from './typography';
 export * from './paper';
 export { EpPaper } from './paper';
+export * from './button';
+export { EpButton } from './button';
