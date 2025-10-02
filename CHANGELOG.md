@@ -5,6 +5,26 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.9.0](https://github.com/lucas-murta/epikouros/compare/v1.8.0...v1.9.0) (2025-10-02)
+
+### ✨ Features
+
+- **button:** outline/text primary/secondary text color matches border color ([02876d7](https://github.com/lucas-murta/epikouros/commit/02876d7a70d77ee266371bcaa10f4b2ca07969e6))
+- **ep-button:** add positive/negative/warning colors; adjust outline/text text color to content; update stories and tests ([c4e7860](https://github.com/lucas-murta/epikouros/commit/c4e7860d39d8878e2d1c08049a169fbfe9f81f98))
+- **ep-button:** map solid backgrounds to status tokens for positive/negative/status ([6e33ba8](https://github.com/lucas-murta/epikouros/commit/6e33ba8a1654009a5f0d6053d4960eac639bcec7))
+- **tokens:** add color-status-positive/negative matching content-positive/negative in light/dark; expose SCSS tokens ([44fac30](https://github.com/lucas-murta/epikouros/commit/44fac304204cd92256d654c7f3430f6fd8562520))
+
+### 🐛 Bug Fixes
+
+- **button:** outline/text primary uses color-content-default for text ([94c88ce](https://github.com/lucas-murta/epikouros/commit/94c88ce1fc654cc6d86ede84bcf4ce4ce8a3988b))
+- **button:** use content-default for outline/text in secondary color ([2dc6d49](https://github.com/lucas-murta/epikouros/commit/2dc6d49c0dbe1f8b7c1542799f1b58522e1076df))
+
+### ♻️ Code Refactoring
+
+- **button:** remove color 'status'; use content-primary text only for solid; outline/text follow selected content token ([9b2a5a1](https://github.com/lucas-murta/epikouros/commit/9b2a5a1be27f9a3c4b761c0b892ec298cefb0050))
+- **ep-button:** remove warning color; add generic status color; map solid to status tokens ([78f2ba9](https://github.com/lucas-murta/epikouros/commit/78f2ba91d89b6e4a8111f00c44aafc5b544d14ab))
+- **ep-button:** use color-content-primary for text across all colors; align outline/text to use --btn-fg ([7f5645b](https://github.com/lucas-murta/epikouros/commit/7f5645b59a76f32e8d5a99e2447370e38dd0e12a))
+
 ## [1.8.0](https://github.com/lucas-murta/epikouros/compare/v1.7.0...v1.8.0) (2025-10-02)
 
 ### ✨ Features
