@@ -4,7 +4,7 @@ import { EpPaper } from './ep-paper';
 
 describe('EpPaper', () => {
   const defaultProps = {
-    children: 'Test content'
+    children: 'Test content',
   };
 
   it('should render successfully', () => {
@@ -25,10 +25,12 @@ describe('EpPaper', () => {
   });
 
   it('should render with custom variant', () => {
-    const { getByText } = render(<EpPaper {...defaultProps} variant="primary" />);
+    const { getByText } = render(
+      <EpPaper {...defaultProps} variant="surface-info" />
+    );
 
     const paper = getByText('Test content');
-    expect(paper.className).toContain('primary');
+    expect(paper.className).toContain('surface-info');
   });
 
   it('should render with custom border', () => {
@@ -39,7 +41,9 @@ describe('EpPaper', () => {
   });
 
   it('should render with custom border radius', () => {
-    const { getByText } = render(<EpPaper {...defaultProps} borderRadius="2" />);
+    const { getByText } = render(
+      <EpPaper {...defaultProps} borderRadius="2" />
+    );
 
     const paper = getByText('Test content');
     expect(paper.className).toContain('radius-2');
@@ -68,7 +72,9 @@ describe('EpPaper', () => {
 
   it('should render with custom className', () => {
     const customClass = 'custom-class';
-    const { getByText } = render(<EpPaper {...defaultProps} className={customClass} />);
+    const { getByText } = render(
+      <EpPaper {...defaultProps} className={customClass} />
+    );
 
     const paper = getByText('Test content');
     expect(paper.className).toContain(customClass);
@@ -83,7 +89,7 @@ describe('EpPaper', () => {
 
   it('should forward ref correctly', () => {
     const ref = React.createRef<HTMLDivElement>();
-    
+
     render(<EpPaper {...defaultProps} ref={ref} />);
 
     expect(ref.current).toBeInstanceOf(HTMLDivElement);
@@ -91,7 +97,9 @@ describe('EpPaper', () => {
   });
 
   it('should pass through additional props', () => {
-    const { container } = render(<EpPaper {...defaultProps} data-testid="paper-test" />);
+    const { container } = render(
+      <EpPaper {...defaultProps} data-testid="paper-test" />
+    );
 
     const paper = container.querySelector('[data-testid="paper-test"]');
     expect(paper).toBeTruthy();
@@ -99,34 +107,53 @@ describe('EpPaper', () => {
 
   describe('variant combinations', () => {
     it('should render surface variants correctly', () => {
-      const variants = ['surface-0', 'surface-1', 'surface-2', 'surface-3', 'surface-4'] as const;
+      const variants = [
+        'surface-0',
+        'surface-1',
+        'surface-2',
+        'surface-3',
+        'surface-4',
+        'surface-info',
+        'surface-system',
+        'surface-warning',
+        'surface-positive',
+        'surface-negative',
+        'surface-primary',
+      ] as const;
 
-      variants.forEach(variant => {
-        const { getByText, unmount } = render(<EpPaper variant={variant}>Content</EpPaper>);
+      variants.forEach((variant) => {
+        const { getByText, unmount } = render(
+          <EpPaper variant={variant}>Content</EpPaper>
+        );
         const paper = getByText('Content');
         expect(paper.className).toContain(variant);
         unmount();
       });
     });
 
-    it('should render color variants correctly', () => {
-      const variants = ['primary', 'secondary'] as const;
-
-      variants.forEach(variant => {
-        const { getByText, unmount } = render(<EpPaper variant={variant}>Content</EpPaper>);
-        const paper = getByText('Content');
-        expect(paper.className).toContain(variant);
-        unmount();
-      });
-    });
+    // Removed color variants 'primary' and 'secondary'
   });
 
   describe('border combinations', () => {
     it('should render border variants correctly', () => {
-      const borders = ['none', '1', '2', '3', 'primary', 'secondary'] as const;
+      const borders = [
+        'none',
+        '1',
+        '2',
+        '3',
+        'primary',
+        'secondary',
+        'info',
+        'system',
+        'warning',
+        'positive',
+        'negative',
+      ] as const;
 
-      borders.forEach(border => {
-        const { getByText, unmount } = render(<EpPaper border={border}>Content</EpPaper>);
+      borders.forEach((border) => {
+        const { getByText, unmount } = render(
+          <EpPaper border={border}>Content</EpPaper>
+        );
         const paper = getByText('Content');
         expect(paper.className).toContain(`border-${border}`);
         unmount();
@@ -138,8 +165,10 @@ describe('EpPaper', () => {
     it('should render elevation variants correctly', () => {
       const elevations = [0, 1, 2, 3, 4] as const;
 
-      elevations.forEach(elevation => {
-        const { getByText, unmount } = render(<EpPaper elevation={elevation}>Content</EpPaper>);
+      elevations.forEach((elevation) => {
+        const { getByText, unmount } = render(
+          <EpPaper elevation={elevation}>Content</EpPaper>
+        );
         const paper = getByText('Content');
         expect(paper.className).toContain(`elevation-${elevation}`);
         unmount();
