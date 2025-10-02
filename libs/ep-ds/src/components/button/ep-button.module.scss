@@ -85,6 +85,19 @@
   }
 }
 
+// Para a variante solid, o fundo deve usar os tokens de status
+.variant-solid.color-positive {
+  --btn-bg: #{$color-status-positive};
+}
+
+.variant-solid.color-negative {
+  --btn-bg: #{$color-status-negative};
+}
+
+.variant-solid.color-status {
+  --btn-bg: #{$color-status-focus};
+}
+
 .variant-outline {
   background-color: transparent;
   // O texto deve acompanhar o token de conteúdo/borda
