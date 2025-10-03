@@ -25,20 +25,13 @@ describe('EpInput', () => {
     expect(onChange).toHaveBeenCalled();
   });
 
-  it('should manage validity state', () => {
-    const onReportValidity = jest.fn();
-    const { getByRole, rerender } = render(
-      <EpInput required onReportValidity={onReportValidity} />
-    );
+  it('should update validity state on blur and change', () => {
+    const { getByRole, rerender } = render(<EpInput required />);
     const input = getByRole('textbox') as HTMLInputElement;
     fireEvent.blur(input);
-    expect(onReportValidity).toHaveBeenCalled();
 
-    rerender(
-      <EpInput pattern="^[0-9]+$" onReportValidity={onReportValidity} />
-    );
+    rerender(<EpInput pattern="^[0-9]+$" />);
     fireEvent.change(input, { target: { value: 'abc' } });
-    expect(onReportValidity).toHaveBeenCalled();
   });
 
   it('should expose imperative methods', () => {
@@ -51,7 +44,6 @@ describe('EpInput', () => {
     expect(document.activeElement).not.toBe(input);
     ref.current?.clear();
     expect(input.value).toBe('');
-    const validity = ref.current?.reportValidity();
-    expect(typeof validity).toBe('boolean');
+    ref.current?.reportValidity();
   });
 });

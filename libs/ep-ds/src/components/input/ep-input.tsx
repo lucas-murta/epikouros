@@ -51,7 +51,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       onKeyDown,
       onKeyUp,
       onClick,
-      onReportValidity,
       ...rest
     },
     ref
@@ -66,27 +65,24 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       focus: () => inputRef.current?.focus(),
       blur: () => inputRef.current?.blur(),
       clear: () => {
-        if (inputRef.current) {
-          inputRef.current.value = '';
-          const valid = inputRef.current.checkValidity();
-          setIsValid(valid);
-          onReportValidity?.(valid);
-        }
+        const el = inputRef.current;
+        if (!el) return;
+        if (!el.value) return;
+        el.value = '';
+        const inputEvent = new Event('input', { bubbles: true });
+        const changeEvent = new Event('change', { bubbles: true });
+        el.dispatchEvent(inputEvent);
+        el.dispatchEvent(changeEvent);
       },
       setInvalidity: () => {
         setIsValid(false);
-        onReportValidity?.(false);
       },
       setValidity: () => {
         setIsValid(true);
-        const valid = inputRef.current?.checkValidity() ?? true;
-        onReportValidity?.(valid);
       },
       reportValidity: () => {
         const v = inputRef.current?.reportValidity() ?? true;
         setIsValid(v);
-        onReportValidity?.(v);
-        return v;
       },
     }));
 
@@ -106,7 +102,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
       const valid = e.currentTarget.checkValidity();
       setIsValid(valid);
-      onReportValidity?.(valid);
       if (typeof maxLength === 'number') {
         setCharCount(e.currentTarget.value.length);
       }
@@ -120,7 +115,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
     const handleBlur: React.FocusEventHandler<HTMLInputElement> = (e) => {
       const valid = e.currentTarget.checkValidity();
       setIsValid(valid);
-      onReportValidity?.(valid);
       onBlur?.(e);
     };
 
@@ -184,13 +178,37 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
           )}
         </div>
         {isValid && !messageSuccess && messageInfo && (
-          <span className={styles.messageInfo}>{messageInfo}</span>
+          <span className={styles.messageInfo}>
+            <EpIcon
+              name="InfoCircle"
+              size={2}
+              className={styles.messageIconInfo}
+              aria-label="info"
+            />
+            {messageInfo}
+          </span>
         )}
         {!isValid && messageDanger && (
-          <span className={styles.messageDanger}>{messageDanger}</span>
+          <span className={styles.messageDanger}>
+            <EpIcon
+              name="TimesCircle"
+              size={2}
+              className={styles.messageIconDanger}
+              aria-label="error"
+            />
+            {messageDanger}
+          </span>
         )}
         {isValid && messageSuccess && (
-          <span className={styles.messageSuccess}>{messageSuccess}</span>
+          <span className={styles.messageSuccess}>
+            <EpIcon
+              name="CheckCircle"
+              size={2}
+              className={styles.messageIconSuccess}
+              aria-label="success"
+            />
+            {messageSuccess}
+          </span>
         )}
       </label>
     );

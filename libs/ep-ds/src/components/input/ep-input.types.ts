@@ -6,7 +6,7 @@ export type EpInputRef = {
   clear: () => void;
   setInvalidity: () => void;
   setValidity: () => void;
-  reportValidity: () => boolean;
+  reportValidity: () => void;
 };
 
 export interface EpInputProps
@@ -17,6 +17,5 @@ export interface EpInputProps
   messageInfo?: string;
   messageDanger?: string;
   messageSuccess?: string;
-  onReportValidity?: (valid: boolean) => void;
   className?: string;
 }
