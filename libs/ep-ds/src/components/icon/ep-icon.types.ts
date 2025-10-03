@@ -4,22 +4,11 @@ export type EpIconLibrary = 'fa';
 
 export type EpIconName = string;
 
-export type EpIconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-
-export type EpIconColor =
-  | 'default'
-  | 'info'
-  | 'system'
-  | 'warning'
-  | 'positive'
-  | 'negative'
-  | 'primary'
-  | 'secondary';
+export type EpIconSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 export interface EpIconProps extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   name: EpIconName;
   lib?: EpIconLibrary;
   size?: EpIconSize;
-  color?: EpIconColor;
   className?: string;
 }

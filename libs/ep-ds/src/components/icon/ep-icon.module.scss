@@ -8,17 +8,6 @@
   color: $color-content-default;
 }
 
-.size-xs { font-size: $font-size-xs; }
-.size-sm { font-size: $font-size-sm; }
-.size-md { font-size: $font-size-md; }
-.size-lg { font-size: $font-size-lg; }
-.size-xl { font-size: $font-size-xl; }
-
-.color-default { color: $color-content-default; }
-.color-info { color: $color-content-info; }
-.color-system { color: $color-content-system; }
-.color-warning { color: $color-content-warning; }
-.color-positive { color: $color-content-positive; }
-.color-negative { color: $color-content-negative; }
-.color-primary { color: $color-content-primary; }
-.color-secondary { color: $color-content-secondary; }
+@each $key, $value in $spacings {
+  .size-#{$key} { font-size: $value; }
+}

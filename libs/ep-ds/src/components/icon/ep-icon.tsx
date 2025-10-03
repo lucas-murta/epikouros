@@ -11,8 +11,7 @@ const getFaIconComponent = (name: string) => {
 export const EpIcon: React.FC<EpIconProps> = ({
   name,
   lib = 'fa',
-  size = 'md',
-  color = 'default',
+  size,
   className,
   ...rest
 }) => {
@@ -22,7 +21,7 @@ export const EpIcon: React.FC<EpIconProps> = ({
     IconComponent = getFaIconComponent(name);
   }
 
-  const classes = [styles.icon, styles[`size-${size}`], styles[`color-${color}`], className]
+  const classes = [styles.icon, size && styles[`size-${size}`], className]
     .filter(Boolean)
     .join(' ');
 

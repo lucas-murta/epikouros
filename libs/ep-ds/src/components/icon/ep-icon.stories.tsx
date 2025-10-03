@@ -10,20 +10,7 @@ const meta: Meta<typeof EpIcon> = {
   argTypes: {
     name: { control: 'text' },
     lib: { control: 'radio', options: ['fa'] },
-    size: { control: 'radio', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
-    color: {
-      control: 'radio',
-      options: [
-        'default',
-        'info',
-        'system',
-        'warning',
-        'positive',
-        'negative',
-        'primary',
-        'secondary',
-      ],
-    },
+    size: { control: 'select', options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
   },
 };
 
@@ -34,7 +21,6 @@ export const Default: Story = {
   args: {
     name: 'AddressBook',
     lib: 'fa',
-    size: 'md',
-    color: 'default',
+    size: 6,
   },
 };
