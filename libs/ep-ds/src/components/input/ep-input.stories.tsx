@@ -9,6 +9,7 @@ const meta: Meta<typeof EpInput> = {
   },
   argTypes: {
     label: { control: 'text' },
+    icon: { control: 'text', description: 'Nome do ícone (ex: User, Home)' },
     type: {
       control: 'select',
       options: ['text', 'password', 'email', 'number'],
@@ -31,6 +32,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     label: 'Username',
+    icon: 'User',
     placeholder: 'Type your username',
     messageInfo: 'Use 4-20 characters',
   },

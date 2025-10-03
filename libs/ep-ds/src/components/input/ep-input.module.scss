@@ -16,6 +16,17 @@
   position: relative;
 }
 
+.iconContainer {
+  position: absolute;
+  inset: 4px;
+  width: $spacing-4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-surface-2;
+  border-radius: $spacing-1;
+}
+
 .input {
   height: 40px;
   padding: 0 $spacing-2;
@@ -27,9 +38,9 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
-    border-color: $color-status-focus;
+    border-color: $color-primary;
     box-shadow: 0 0 0 3px
-      color-mix(in oklab, $color-status-focus 20%, $color-surface-0);
+      color-mix(in oklab, $color-primary 20%, $color-surface-0);
   }
 
   &[type='number'] {
@@ -42,6 +53,10 @@
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.hasIcon .input {
+  padding-left: $spacing-6;
 }
 
 .hasCounter .input {

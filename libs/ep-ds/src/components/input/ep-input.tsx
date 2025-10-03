@@ -5,6 +5,7 @@ import React, {
   useState,
 } from 'react';
 import styles from './ep-input.module.scss';
+import { EpIcon } from '../icon';
 import { EpInputProps, EpInputRef } from './ep-input.types';
 
 const getCounterClassName = (maxLength: number, charCount: number): string => {
@@ -26,6 +27,7 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
   (
     {
       value,
+      icon,
       label,
       type = 'text',
       name,
@@ -140,11 +142,17 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
         <div
           className={[
             typeof maxLength === 'number' ? styles.hasCounter : '',
+            icon ? styles.hasIcon : '',
             styles.inputContainer,
           ]
             .filter(Boolean)
             .join(' ')}
         >
+          {icon && (
+            <div className={styles.iconContainer} aria-hidden="true">
+              <EpIcon name={icon} size={2} />
+            </div>
+          )}
           <input
             ref={inputRef}
             className={classes}
