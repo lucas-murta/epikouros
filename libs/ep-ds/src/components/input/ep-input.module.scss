@@ -74,6 +74,11 @@
     $color-surface-negative 8%,
     $color-surface-0
   );
+  &:focus {
+    border-color: $color-status-error;
+    box-shadow: 0 0 0 3px
+      color-mix(in oklab, $color-status-error 20%, $color-surface-0);
+  }
 }
 
 .disabled {
@@ -86,15 +91,36 @@
 .messageInfo {
   font-size: $font-size-xs;
   color: $color-content-info;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-1;
 }
 
 .messageDanger {
   font-size: $font-size-xs;
   color: $color-content-negative;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-1;
 }
 
 .messageSuccess {
   font-size: $font-size-xs;
+  color: $color-content-positive;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-1;
+}
+
+.messageIconInfo {
+  color: $color-content-info;
+}
+
+.messageIconDanger {
+  color: $color-content-negative;
+}
+
+.messageIconSuccess {
   color: $color-content-positive;
 }
 

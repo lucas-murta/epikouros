@@ -184,13 +184,37 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
           )}
         </div>
         {isValid && !messageSuccess && messageInfo && (
-          <span className={styles.messageInfo}>{messageInfo}</span>
+          <span className={styles.messageInfo}>
+            <EpIcon
+              name="InfoCircle"
+              size={2}
+              className={styles.messageIconInfo}
+              aria-label="info"
+            />
+            {messageInfo}
+          </span>
         )}
         {!isValid && messageDanger && (
-          <span className={styles.messageDanger}>{messageDanger}</span>
+          <span className={styles.messageDanger}>
+            <EpIcon
+              name="TimesCircle"
+              size={2}
+              className={styles.messageIconDanger}
+              aria-label="error"
+            />
+            {messageDanger}
+          </span>
         )}
         {isValid && messageSuccess && (
-          <span className={styles.messageSuccess}>{messageSuccess}</span>
+          <span className={styles.messageSuccess}>
+            <EpIcon
+              name="CheckCircle"
+              size={2}
+              className={styles.messageIconSuccess}
+              aria-label="success"
+            />
+            {messageSuccess}
+          </span>
         )}
       </label>
     );
