@@ -51,7 +51,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       onKeyDown,
       onKeyUp,
       onClick,
-      onReportValidity,
       ...rest
     },
     ref
@@ -66,27 +65,27 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       focus: () => inputRef.current?.focus(),
       blur: () => inputRef.current?.blur(),
       clear: () => {
-        if (inputRef.current) {
-          inputRef.current.value = '';
-          const valid = inputRef.current.checkValidity();
+        const el = inputRef.current;
+        if (el) {
+          el.value = '';
+          const valid = el.checkValidity();
           setIsValid(valid);
-          onReportValidity?.(valid);
+          // Disparar eventos para refletir mudança imediata
+          const inputEvent = new Event('input', { bubbles: true });
+          const changeEvent = new Event('change', { bubbles: true });
+          el.dispatchEvent(inputEvent);
+          el.dispatchEvent(changeEvent);
         }
       },
       setInvalidity: () => {
         setIsValid(false);
-        onReportValidity?.(false);
       },
       setValidity: () => {
         setIsValid(true);
-        const valid = inputRef.current?.checkValidity() ?? true;
-        onReportValidity?.(valid);
       },
       reportValidity: () => {
         const v = inputRef.current?.reportValidity() ?? true;
         setIsValid(v);
-        onReportValidity?.(v);
-        return v;
       },
     }));
 
@@ -106,7 +105,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
       const valid = e.currentTarget.checkValidity();
       setIsValid(valid);
-      onReportValidity?.(valid);
       if (typeof maxLength === 'number') {
         setCharCount(e.currentTarget.value.length);
       }
@@ -120,7 +118,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
     const handleBlur: React.FocusEventHandler<HTMLInputElement> = (e) => {
       const valid = e.currentTarget.checkValidity();
       setIsValid(valid);
-      onReportValidity?.(valid);
       onBlur?.(e);
     };
 

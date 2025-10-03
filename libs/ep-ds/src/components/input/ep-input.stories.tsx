@@ -12,7 +12,10 @@ const ImperativeDemo: React.FC<any> = (p) => {
         ref={ref}
         {...p}
         value={val}
-        onChange={(e) => setVal(e.currentTarget.value)}
+        onChange={(e) => {
+          setVal(e.currentTarget.value);
+          p.onChange?.(e);
+        }}
       />
       <div style={{ display: 'flex', gap: 8 }}>
         <button onClick={() => ref.current?.focus()}>focus()</button>
@@ -54,14 +57,11 @@ const meta: Meta<typeof EpInput> = {
     messageDanger: { control: 'text' },
     messageSuccess: { control: 'text' },
     className: { control: 'text' },
-    onInput: { action: 'onInput' },
     onChange: { action: 'onChange' },
     onFocus: { action: 'onFocus' },
     onBlur: { action: 'onBlur' },
     onKeyDown: { action: 'onKeyDown' },
-    onKeyUp: { action: 'onKeyUp' },
     onClick: { action: 'onClick' },
-    onReportValidity: { action: 'onReportValidity' },
   },
 };
 
