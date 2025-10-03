@@ -5,6 +5,13 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.12.0](https://github.com/lucas-murta/epikouros/compare/v1.11.0...v1.12.0) (2025-10-03)
+
+### ✨ Features
+
+- **ep-input:** add left icon support with EpIcon and conditional rendering when value present ([44ee955](https://github.com/lucas-murta/epikouros/commit/44ee955a1b5043a31af22f0446dca42a7d00fde8))
+- **ep-input:** refine left icon behavior and styles ([1812f26](https://github.com/lucas-murta/epikouros/commit/1812f2612f97b31c834f718457918f59891ec745))
+
 ## [1.11.0](https://github.com/lucas-murta/epikouros/compare/v1.10.0...v1.11.0) (2025-10-03)
 
 ### ✨ Features
