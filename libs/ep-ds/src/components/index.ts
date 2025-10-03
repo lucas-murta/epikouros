@@ -6,3 +6,5 @@ export * from './paper';
 export { EpPaper } from './paper';
 export * from './button';
 export { EpButton } from './button';
+export * from './input';
+export { EpInput } from './input';
