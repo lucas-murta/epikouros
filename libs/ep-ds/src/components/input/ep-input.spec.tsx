@@ -45,13 +45,13 @@ describe('EpInput', () => {
     const ref = React.createRef<import('./ep-input.types').EpInputRef>();
     const { getByRole } = render(<EpInput ref={ref} />);
     const input = getByRole('textbox') as HTMLInputElement;
-    ref.current.focus();
+    ref.current?.focus();
     expect(document.activeElement).toBe(input);
-    ref.current.blur();
+    ref.current?.blur();
     expect(document.activeElement).not.toBe(input);
-    ref.current.clear();
+    ref.current?.clear();
     expect(input.value).toBe('');
-    const validity = ref.current.reportValidity();
+    const validity = ref.current?.reportValidity();
     expect(typeof validity).toBe('boolean');
   });
 });
