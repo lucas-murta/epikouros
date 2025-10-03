@@ -48,7 +48,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       onBlur,
       onKeyDown,
       onKeyUp,
-      onKeyPress,
       onClick,
       onReportValidity,
       ...rest
