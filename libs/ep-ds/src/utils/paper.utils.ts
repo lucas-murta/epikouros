@@ -1,20 +1,35 @@
 import { processSpacingShorthand } from './spacing.utils';
 
-/**
- * Tipo para valores de tamanho CSS
- */
-export type SizeValue = 
-  | 'auto' 
-  | 'full' 
-  | 'fit-content' 
-  | 'min-content' 
+export type SizeValue =
+  | 'auto'
+  | 'full'
+  | 'fit-content'
+  | 'min-content'
   | 'max-content'
-  | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12'
-  | '16' | '20' | '24' | '32' | '40' | '48' | '56' | '64' | '72' | '80' | '96';
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | '10'
+  | '11'
+  | '12'
+  | '16'
+  | '20'
+  | '24'
+  | '32'
+  | '40'
+  | '48'
+  | '56'
+  | '64'
+  | '72'
+  | '80'
+  | '96';
 
-/**
- * Constrói as classes CSS para o componente Paper
- */
 export function buildPaperClasses(
   props: {
     variant?: string;
@@ -55,7 +70,6 @@ export function buildPaperClasses(
     className = '',
   } = props;
 
-  // Processar padding e margin
   const paddingClasses = processSpacingShorthand(padding, 'p', styles);
   const smPaddingClasses = processSpacingShorthand(paddingSm, 'sm-p', styles);
   const mdPaddingClasses = processSpacingShorthand(paddingMd, 'md-p', styles);
@@ -66,7 +80,6 @@ export function buildPaperClasses(
   const mdMarginClasses = processSpacingShorthand(marginMd, 'md-m', styles);
   const lgMarginClasses = processSpacingShorthand(marginLg, 'lg-m', styles);
 
-  // Construir as classes CSS
   const paperClasses = [
     styles.paper,
     styles[variant],
@@ -74,10 +87,10 @@ export function buildPaperClasses(
     styles[`radius-${borderRadius}`],
     styles[`elevation-${elevation}`],
     interactive && styles.interactive,
-    // Classes de tamanho
+
     width && styles[`w-${width}`],
     height && styles[`h-${height}`],
-    // Classes de spacing
+
     ...paddingClasses,
     ...smPaddingClasses,
     ...mdPaddingClasses,
@@ -86,8 +99,10 @@ export function buildPaperClasses(
     ...smMarginClasses,
     ...mdMarginClasses,
     ...lgMarginClasses,
-    className
-  ].filter(Boolean).join(' ');
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return paperClasses;
 }

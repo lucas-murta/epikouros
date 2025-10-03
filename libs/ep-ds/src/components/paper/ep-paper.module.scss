@@ -1,6 +1,5 @@
 @use '../../globals/index.scss' as *;
 
-// Tokens de elevação para Paper
 $paper-shadow-0: 0 0 0 0 transparent;
 $paper-shadow-1: 0 1px 3px 0 $color-shadow-0, 0 1px 2px 0 $color-shadow-1;
 $paper-shadow-2: 0 4px 6px -1px $color-shadow-0, 0 2px 4px -1px $color-shadow-1;
@@ -9,13 +8,11 @@ $paper-shadow-3: 0 10px 15px -3px $color-shadow-0,
 $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   0 10px 10px -5px $color-shadow-1;
 
-// Classe base do Paper
 .paper {
   display: block;
   position: relative;
   transition: all 0.2s ease-in-out;
 
-  // Variantes de background
   &.surface-0 {
     background-color: $color-surface-0;
   }
@@ -36,7 +33,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
     background-color: $color-surface-4;
   }
 
-  // Novas variantes de surface
   &.surface-info {
     background-color: $color-surface-info;
   }
@@ -71,7 +67,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
     color: $color-content-bright;
   }
 
-  // Variantes de borda
   &.border-none {
     border: none;
   }
@@ -96,7 +91,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
     border: 1px solid $color-secondary;
   }
 
-  // Bordas baseadas em content tokens
   &.border-info {
     border: 1px solid $color-content-info;
   }
@@ -117,20 +111,18 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
     border: 1px solid $color-content-negative;
   }
 
-  // Variantes de border-radius
   &.radius-none {
     border-radius: 0;
   }
 
   &.radius-1 {
-    border-radius: $spacing-1; // 8px
+    border-radius: $spacing-1;
   }
 
   &.radius-2 {
-    border-radius: $spacing-2; // 16px
+    border-radius: $spacing-2;
   }
 
-  // Variantes de elevação
   &.elevation-0 {
     box-shadow: $paper-shadow-0;
   }
@@ -151,7 +143,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
     box-shadow: $paper-shadow-4;
   }
 
-  // Estados interativos para elevação
   &.interactive {
     cursor: pointer;
 
@@ -179,7 +170,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   }
 }
 
-// Classes de largura
 .w-auto {
   width: auto;
 }
@@ -196,7 +186,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   width: max-content;
 }
 
-// Larguras baseadas em spacing tokens
 .w-1 {
   width: $spacing-1;
 }
@@ -234,7 +223,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   width: $spacing-12;
 }
 
-// Larguras adicionais
 .w-16 {
   width: 4rem;
 }
@@ -269,7 +257,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   width: 24rem;
 }
 
-// Classes de altura
 .h-auto {
   height: auto;
 }
@@ -286,7 +273,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   height: max-content;
 }
 
-// Alturas baseadas em spacing tokens
 .h-1 {
   height: $spacing-1;
 }
@@ -324,7 +310,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   height: $spacing-12;
 }
 
-// Alturas adicionais
 .h-16 {
   height: 4rem;
 }
@@ -359,7 +344,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   height: 24rem;
 }
 
-// Classes responsivas para largura
 @media (max-width: 640px) {
   .sm-w-auto {
     width: auto;
@@ -627,7 +611,6 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   }
 }
 
-// Classes responsivas para altura
 @media (max-width: 640px) {
   .sm-h-auto {
     height: auto;
@@ -895,5 +878,4 @@ $paper-shadow-4: 0 20px 25px -5px $color-shadow-0,
   }
 }
 
-// Incluir classes de spacing (padding e margin)
 @include generate-responsive-spacing-classes();

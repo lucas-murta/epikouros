@@ -6,7 +6,6 @@
   color: $color-content-default;
 }
 
-// Variantes de tipografia baseadas no design system
 .variant-heading-1 {
   @include typography('heading-1');
 }
@@ -43,14 +42,12 @@
   @include typography('body-small');
 }
 
-// Tamanhos de fonte baseados nos tokens de spacing (1-12)
 @each $key, $value in $spacings {
   .size-#{$key} {
     font-size: $value;
   }
 }
 
-// Pesos de fonte
 .weight-light {
   font-weight: $font-weight-light;
 }
@@ -71,7 +68,6 @@
   font-weight: $font-weight-bold;
 }
 
-// Famílias de fonte
 .family-heading {
   font-family: $font-family-heading;
 }
@@ -84,7 +80,6 @@
   font-family: $font-family-body;
 }
 
-// Alturas de linha
 .line-height-tight {
   line-height: $line-height-tight;
 }
@@ -105,7 +100,6 @@
   line-height: $line-height-loose;
 }
 
-// Espaçamentos entre letras
 .letter-spacing-tight {
   letter-spacing: $letter-spacing-tight;
 }
@@ -122,7 +116,6 @@
   letter-spacing: $letter-spacing-wider;
 }
 
-// Alinhamentos de texto
 .align-left {
   text-align: left;
 }
@@ -139,7 +132,6 @@
   text-align: justify;
 }
 
-// Decorações de texto
 .italic {
   font-style: italic;
 }
@@ -152,7 +144,6 @@
   text-decoration: line-through;
 }
 
-// Transformações de texto
 .uppercase {
   text-transform: uppercase;
 }
@@ -165,14 +156,12 @@
   text-transform: capitalize;
 }
 
-// Truncamento de texto
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-// Truncamento com múltiplas linhas
 .line-clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;

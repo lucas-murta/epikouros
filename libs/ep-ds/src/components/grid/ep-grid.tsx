@@ -21,30 +21,29 @@ export function EpGrid({
   className = '',
   children,
 }: Readonly<GridProps>) {
-  const gridClasses = buildGridClasses({
-    cols,
-    gap,
-    gapX,
-    gapY,
-    smCols,
-    mdCols,
-    lgCols,
-    padding,
-    smPadding,
-    mdPadding,
-    lgPadding,
-    margin,
-    smMargin,
-    mdMargin,
-    lgMargin,
-    className,
-  }, styles);
-
-  return (
-    <div className={gridClasses}>
-      {children}
-    </div>
+  const gridClasses = buildGridClasses(
+    {
+      cols,
+      gap,
+      gapX,
+      gapY,
+      smCols,
+      mdCols,
+      lgCols,
+      padding,
+      smPadding,
+      mdPadding,
+      lgPadding,
+      margin,
+      smMargin,
+      mdMargin,
+      lgMargin,
+      className,
+    },
+    styles
   );
+
+  return <div className={gridClasses}>{children}</div>;
 }
 
 export default EpGrid;

@@ -1,24 +1,23 @@
 import { buildGridClasses } from './grid.utils';
 
-// Mock dos estilos CSS modules
 const mockStyles: Record<string, string> = {
   grid: 'grid-class',
-  // Colunas
+
   'cols-1': 'cols-1-class',
   'cols-2': 'cols-2-class',
   'cols-3': 'cols-3-class',
   'cols-4': 'cols-4-class',
-  // Gaps
+
   'gap-2': 'gap-2-class',
   'gap-4': 'gap-4-class',
   'gap-x-2': 'gap-x-2-class',
   'gap-y-4': 'gap-y-4-class',
-  // Colunas responsivas
+
   'sm-cols-2': 'sm-cols-2-class',
   'sm-cols-3': 'sm-cols-3-class',
   'md-cols-3': 'md-cols-3-class',
   'lg-cols-4': 'lg-cols-4-class',
-  // Padding classes
+
   'p-2': 'p-2-class',
   'p-4': 'p-4-class',
   'px-2': 'px-2-class',
@@ -32,7 +31,7 @@ const mockStyles: Record<string, string> = {
   'sm-p-2': 'sm-p-2-class',
   'md-p-4': 'md-p-4-class',
   'lg-p-6': 'lg-p-6-class',
-  // Margin classes
+
   'm-2': 'm-2-class',
   'm-4': 'm-4-class',
   'mx-2': 'mx-2-class',

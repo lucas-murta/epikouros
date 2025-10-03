@@ -1,51 +1,43 @@
-// Design System - Tokens de Tipografia
-// Importação das fontes do Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
 
-// Definição das famílias de fontes
 $font-family-heading: 'Raleway', sans-serif;
 $font-family-highlight: 'Crimson Text', serif;
 $font-family-body: 'Jost', sans-serif;
 
-// Pesos de fonte
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
-// Tamanhos de fonte (em rem, baseados na unidade de espaçamento)
-$font-size-xs: 0.75rem;     // 12px (1.5 * $spacing-unit)
-$font-size-sm: 0.875rem;    // 14px (1.75 * $spacing-unit)
-$font-size-base: 1rem;      // 16px (2 * $spacing-unit)
-$font-size-md: 1.125rem;    // 18px (2.25 * $spacing-unit)
-$font-size-lg: 1.25rem;     // 20px (2.5 * $spacing-unit)
-$font-size-xl: 1.5rem;      // 24px (3 * $spacing-unit)
-$font-size-2xl: 1.875rem;   // 30px (3.75 * $spacing-unit)
-$font-size-3xl: 2.25rem;    // 36px (4.5 * $spacing-unit)
-$font-size-4xl: 3rem;       // 48px (6 * $spacing-unit)
-$font-size-5xl: 3.75rem;    // 60px (7.5 * $spacing-unit)
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 1.875rem;
+$font-size-3xl: 2.25rem;
+$font-size-4xl: 3rem;
+$font-size-5xl: 3.75rem;
 
-// Altura de linha
 $line-height-tight: 1.1;
 $line-height-snug: 1.25;
 $line-height-normal: 1.5;
 $line-height-relaxed: 1.75;
 $line-height-loose: 2;
 
-// Espaçamento entre letras
 $letter-spacing-tight: -0.025em;
 $letter-spacing-normal: 0;
 $letter-spacing-wide: 0.025em;
 $letter-spacing-wider: 0.05em;
 
-// Configurações de tipografia para headings
 $heading-1: (
   'font-family': $font-family-heading,
   'font-size': $font-size-4xl,
   'font-weight': $font-weight-bold,
   'line-height': $line-height-tight,
-  'letter-spacing': $letter-spacing-tight
+  'letter-spacing': $letter-spacing-tight,
 );
 
 $heading-2: (
@@ -53,7 +45,7 @@ $heading-2: (
   'font-size': $font-size-3xl,
   'font-weight': $font-weight-bold,
   'line-height': $line-height-tight,
-  'letter-spacing': $letter-spacing-tight
+  'letter-spacing': $letter-spacing-tight,
 );
 
 $heading-3: (
@@ -61,7 +53,7 @@ $heading-3: (
   'font-size': $font-size-2xl,
   'font-weight': $font-weight-semibold,
   'line-height': $line-height-snug,
-  'letter-spacing': $letter-spacing-tight
+  'letter-spacing': $letter-spacing-tight,
 );
 
 $heading-4: (
@@ -69,17 +61,16 @@ $heading-4: (
   'font-size': $font-size-xl,
   'font-weight': $font-weight-semibold,
   'line-height': $line-height-snug,
-  'letter-spacing': $letter-spacing-normal
+  'letter-spacing': $letter-spacing-normal,
 );
 
-// Configurações para texto de destaque
 $highlight-large: (
   'font-family': $font-family-highlight,
   'font-size': $font-size-xl,
   'font-weight': $font-weight-regular,
   'line-height': $line-height-normal,
   'letter-spacing': $letter-spacing-normal,
-  'font-style': italic
+  'font-style': italic,
 );
 
 $highlight-medium: (
@@ -88,16 +79,15 @@ $highlight-medium: (
   'font-weight': $font-weight-regular,
   'line-height': $line-height-normal,
   'letter-spacing': $letter-spacing-normal,
-  'font-style': italic
+  'font-style': italic,
 );
 
-// Configurações para texto de conteúdo
 $body-large: (
   'font-family': $font-family-body,
   'font-size': $font-size-md,
   'font-weight': $font-weight-regular,
   'line-height': $line-height-relaxed,
-  'letter-spacing': $letter-spacing-normal
+  'letter-spacing': $letter-spacing-normal,
 );
 
 $body-medium: (
@@ -105,7 +95,7 @@ $body-medium: (
   'font-size': $font-size-base,
   'font-weight': $font-weight-regular,
   'line-height': $line-height-relaxed,
-  'letter-spacing': $letter-spacing-normal
+  'letter-spacing': $letter-spacing-normal,
 );
 
 $body-small: (
@@ -113,10 +103,9 @@ $body-small: (
   'font-size': $font-size-sm,
   'font-weight': $font-weight-regular,
   'line-height': $line-height-normal,
-  'letter-spacing': $letter-spacing-normal
+  'letter-spacing': $letter-spacing-normal,
 );
 
-// Mapa de estilos de tipografia
 $typography-styles: (
   'heading-1': $heading-1,
   'heading-2': $heading-2,
@@ -126,10 +115,9 @@ $typography-styles: (
   'highlight-medium': $highlight-medium,
   'body-large': $body-large,
   'body-medium': $body-medium,
-  'body-small': $body-small
+  'body-small': $body-small,
 );
 
-// Função para acessar propriedades de tipografia
 @function typography($style, $property) {
   @if map-has-key($typography-styles, $style) {
     @if map-has-key(map-get($typography-styles, $style), $property) {
@@ -141,7 +129,6 @@ $typography-styles: (
   @return null;
 }
 
-// Mixins para aplicar estilos de tipografia
 @mixin typography($style) {
   $config: map-get($typography-styles, $style);
 
