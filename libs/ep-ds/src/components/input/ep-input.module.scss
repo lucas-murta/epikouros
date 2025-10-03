@@ -12,6 +12,10 @@
   color: $color-content-default;
 }
 
+.inputContainer {
+  position: relative;
+}
+
 .input {
   height: 40px;
   padding: 0 $spacing-2;
@@ -37,6 +41,10 @@
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.hasCounter .input {
+  padding-right: $spacing-5;
 }
 
 .valid {
@@ -74,8 +82,20 @@
   color: $color-content-positive;
 }
 
-.charCounter {
+.charCounterInside {
+  position: absolute;
+  right: $spacing-2;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: $font-size-xs;
   color: $color-content-ghost;
-  align-self: flex-end;
+  pointer-events: none;
+}
+
+.charCounterWarnInside {
+  color: $color-content-warning;
+}
+
+.charCounterNegativeInside {
+  color: $color-content-negative;
 }

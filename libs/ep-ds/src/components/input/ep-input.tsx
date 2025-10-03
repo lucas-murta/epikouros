@@ -123,30 +123,55 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
     return (
       <label className={styles.wrapper}>
         {label && <span className={styles.label}>{label}</span>}
-        <input
-          ref={inputRef}
-          className={classes}
-          type={type}
-          name={name}
-          disabled={disabled}
-          readOnly={readOnly}
-          placeholder={placeholder}
-          maxLength={maxLength}
-          min={min}
-          max={max}
-          autoComplete={autoComplete}
-          required={required}
-          pattern={pattern}
-          value={value}
-          onInput={handleInput}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          onKeyDown={handleKeyDown}
-          onKeyUp={handleKeyUp}
-          onClick={handleClick}
-          {...rest}
-        />
+        <div
+          className={[
+            typeof maxLength === 'number' ? styles.hasCounter : '',
+            styles.inputContainer,
+          ]
+            .filter(Boolean)
+            .join(' ')}
+        >
+          <input
+            ref={inputRef}
+            className={classes}
+            type={type}
+            name={name}
+            disabled={disabled}
+            readOnly={readOnly}
+            placeholder={placeholder}
+            maxLength={maxLength}
+            min={min}
+            max={max}
+            autoComplete={autoComplete}
+            required={required}
+            pattern={pattern}
+            value={value}
+            onInput={handleInput}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            onClick={handleClick}
+            {...rest}
+          />
+          {typeof maxLength === 'number' && (
+            <span
+              className={[
+                styles.charCounterInside,
+                maxLength - charCount <= 0
+                  ? styles.charCounterNegativeInside
+                  : maxLength - charCount <= 3
+                  ? styles.charCounterWarnInside
+                  : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+            >
+              {Math.max(0, maxLength - charCount)}
+            </span>
+          )}
+        </div>
         {messageInfo && isValid && (
           <span className={styles.messageInfo}>{messageInfo}</span>
         )}
@@ -155,11 +180,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
         )}
         {isValid && messageSuccess && (
           <span className={styles.messageSuccess}>{messageSuccess}</span>
-        )}
-        {typeof maxLength === 'number' && (
-          <span className={styles.charCounter}>
-            {Math.max(0, maxLength - charCount)}
-          </span>
         )}
       </label>
     );
