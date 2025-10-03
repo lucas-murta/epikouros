@@ -33,7 +33,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       onBlur,
       onKeyDown,
       onKeyUp,
-      onKeyPress,
       onClick,
       onReportValidity,
       ...rest
@@ -110,12 +109,6 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       onKeyUp?.(e);
     };
 
-    const handleKeyPress: React.KeyboardEventHandler<HTMLInputElement> = (
-      e
-    ) => {
-      onKeyPress?.(e);
-    };
-
     const handleClick: React.MouseEventHandler<HTMLInputElement> = (e) => {
       onClick?.(e);
     };
@@ -132,19 +125,18 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
           readOnly={readOnly}
           placeholder={placeholder}
           maxLength={maxLength}
-          min={min as any}
-          max={max as any}
+          min={min}
+          max={max}
           autoComplete={autoComplete}
           required={required}
-          pattern={pattern as any}
-          value={value as any}
+          pattern={pattern}
+          value={value}
           onInput={handleInput}
           onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
-          onKeyPress={handleKeyPress}
           onClick={handleClick}
           {...rest}
         />

@@ -42,7 +42,7 @@ describe('EpInput', () => {
   });
 
   it('should expose imperative methods', () => {
-    const ref = React.createRef<any>();
+    const ref = React.createRef<import('./ep-input.types').EpInputRef>();
     const { getByRole } = render(<EpInput ref={ref} />);
     const input = getByRole('textbox') as HTMLInputElement;
     ref.current.focus();

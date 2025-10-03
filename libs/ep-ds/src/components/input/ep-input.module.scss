@@ -24,7 +24,8 @@
 
   &:focus {
     border-color: $color-status-focus;
-    box-shadow: 0 0 0 3px rgba(51, 102, 255, 0.2);
+    box-shadow: 0 0 0 3px
+      color-mix(in oklab, $color-status-focus 20%, $color-surface-0);
   }
 }
 
@@ -34,7 +35,11 @@
 
 .invalid {
   border-color: $color-status-error;
-  background-color: color-mix(in oklab, $color-surface-negative 8%, white);
+  background-color: color-mix(
+    in oklab,
+    $color-surface-negative 8%,
+    $color-surface-0
+  );
 }
 
 .disabled {
