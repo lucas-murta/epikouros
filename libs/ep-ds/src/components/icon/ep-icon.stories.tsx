@@ -11,6 +11,7 @@ const meta: Meta<typeof EpIcon> = {
     name: { control: 'text' },
     lib: { control: 'radio', options: ['fa'] },
     size: { control: 'select', options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+    ariaLabel: { control: 'text' },
   },
 };
 
@@ -22,5 +23,6 @@ export const Default: Story = {
     name: 'AddressBook',
     lib: 'fa',
     size: 6,
+    ariaLabel: 'Address book icon',
   },
 };

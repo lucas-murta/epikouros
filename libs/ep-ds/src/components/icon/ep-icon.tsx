@@ -5,17 +5,18 @@ import { EpIconProps } from './ep-icon.types';
 
 const getFaIconComponent = (name: string) => {
   const key = `Fa${name}` as keyof typeof FaIcons;
-  return FaIcons[key] as React.ComponentType<any> | undefined;
+  return FaIcons[key] as React.ComponentType<React.HTMLAttributes<HTMLElement>> | undefined;
 };
 
 export const EpIcon: React.FC<EpIconProps> = ({
   name,
   lib = 'fa',
   size,
+  ariaLabel,
   className,
   ...rest
 }) => {
-  let IconComponent: React.ComponentType<any> | undefined;
+  let IconComponent: React.ComponentType<React.HTMLAttributes<HTMLElement>> | undefined;
 
   if (lib === 'fa') {
     IconComponent = getFaIconComponent(name);
@@ -26,10 +27,10 @@ export const EpIcon: React.FC<EpIconProps> = ({
     .join(' ');
 
   if (!IconComponent) {
-    return <span className={classes} {...rest} />;
+    return <span className={classes} aria-label={ariaLabel} {...rest} />;
   }
 
-  return <IconComponent className={classes} {...rest} />;
+  return <IconComponent className={classes} aria-label={ariaLabel} {...rest} />;
 };
 
 EpIcon.displayName = 'EpIcon';
