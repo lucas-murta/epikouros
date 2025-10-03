@@ -172,7 +172,7 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
             </span>
           )}
         </div>
-        {messageInfo && isValid && (
+        {isValid && !messageSuccess && messageInfo && (
           <span className={styles.messageInfo}>{messageInfo}</span>
         )}
         {!isValid && messageDanger && (
