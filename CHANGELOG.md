@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.12.1](https://github.com/lucas-murta/epikouros/compare/v1.12.0...v1.12.1) (2025-10-03)
+
+### 🐛 Bug Fixes
+
+- **ep-input:** error focus styling; add icons to info/error/success messages; improve Storybook actions and examples ([e44e998](https://github.com/lucas-murta/epikouros/commit/e44e998f9fd8a1120bb03590f12beebebfb18e63))
+
 ## [1.12.0](https://github.com/lucas-murta/epikouros/compare/v1.11.0...v1.12.0) (2025-10-03)
 
 ### ✨ Features
