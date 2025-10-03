@@ -34,6 +34,7 @@
 
   &[type='number'] {
     -moz-appearance: textfield;
+    appearance: textfield;
   }
 
   &[type='number']::-webkit-outer-spin-button,

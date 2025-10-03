@@ -7,6 +7,21 @@ import React, {
 import styles from './ep-input.module.scss';
 import { EpInputProps, EpInputRef } from './ep-input.types';
 
+const getCounterClassName = (maxLength: number, charCount: number): string => {
+  const remaining = Math.max(0, maxLength - charCount);
+  if (remaining <= 0) {
+    return [styles.charCounterInside, styles.charCounterNegativeInside]
+      .filter(Boolean)
+      .join(' ');
+  }
+  if (remaining <= 3) {
+    return [styles.charCounterInside, styles.charCounterWarnInside]
+      .filter(Boolean)
+      .join(' ');
+  }
+  return styles.charCounterInside;
+};
+
 export const EpInput = forwardRef<EpInputRef, EpInputProps>(
   (
     {
@@ -156,18 +171,7 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
             {...rest}
           />
           {typeof maxLength === 'number' && (
-            <span
-              className={[
-                styles.charCounterInside,
-                maxLength - charCount <= 0
-                  ? styles.charCounterNegativeInside
-                  : maxLength - charCount <= 3
-                  ? styles.charCounterWarnInside
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(' ')}
-            >
+            <span className={getCounterClassName(maxLength, charCount)}>
               {Math.max(0, maxLength - charCount)}
             </span>
           )}
