@@ -1,0 +1,60 @@
+@use '../../globals/index.scss' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+}
+
+.label {
+  font-family: $font-family-body;
+  font-size: $font-size-sm;
+  color: $color-content-default;
+}
+
+.input {
+  height: 40px;
+  padding: 0 $spacing-2;
+  border-radius: $spacing-1;
+  border: 1px solid $color-border-2;
+  background-color: $color-surface-0;
+  color: $color-content-default;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: $color-status-focus;
+    box-shadow: 0 0 0 3px rgba(51, 102, 255, 0.2);
+  }
+}
+
+.valid {
+  border-color: $color-border-2;
+}
+
+.invalid {
+  border-color: $color-status-error;
+  background-color: color-mix(in oklab, $color-surface-negative 8%, white);
+}
+
+.disabled {
+  background-color: $color-surface-3;
+  color: $color-content-disable;
+  border-color: $color-border-2;
+  cursor: not-allowed;
+}
+
+.messageInfo {
+  font-size: $font-size-xs;
+  color: $color-content-info;
+}
+
+.messageDanger {
+  font-size: $font-size-xs;
+  color: $color-status-error;
+}
+
+.messageSuccess {
+  font-size: $font-size-xs;
+  color: $color-status-success;
+}
