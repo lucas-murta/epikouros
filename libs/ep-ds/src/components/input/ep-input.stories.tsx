@@ -77,29 +77,6 @@ export const Default: Story = {
   },
 };
 
-export const ValidationStates: Story = {
-  args: {
-    label: 'Code',
-    placeholder: 'Only numbers allowed',
-    pattern: '^[0-9]+$',
-    messageInfo: 'Somente números são aceitos',
-    messageDanger: 'Valor inválido: use apenas números',
-    messageSuccess: 'Valor válido!',
-    required: true,
-  },
-};
-
-export const MessagesWithIcons: Story = {
-  args: {
-    label: 'Email',
-    type: 'email',
-    placeholder: 'you@example.com',
-    messageInfo: 'Informe um e-mail válido',
-    messageDanger: 'E-mail inválido',
-    messageSuccess: 'Tudo certo!',
-  },
-};
-
 export const ImperativeMethods: Story = {
   render: (args) => {
     return <ImperativeDemo {...args} />;
