@@ -18,10 +18,10 @@ describe('EpPaper', () => {
     const paper = getByText('Test content');
     expect(paper).toBeTruthy();
     expect(paper.className).toContain('paper');
-    expect(paper.className).toContain('surface-1'); // default variant
-    expect(paper.className).toContain('border-none'); // default border
-    expect(paper.className).toContain('radius-1'); // default borderRadius
-    expect(paper.className).toContain('elevation-1'); // default elevation
+    expect(paper.className).toContain('surface-1');
+    expect(paper.className).toContain('border-none');
+    expect(paper.className).toContain('radius-1');
+    expect(paper.className).toContain('elevation-1');
   });
 
   it('should render with custom variant', () => {
@@ -130,8 +130,6 @@ describe('EpPaper', () => {
         unmount();
       });
     });
-
-    // Removed color variants 'primary' and 'secondary'
   });
 
   describe('border combinations', () => {

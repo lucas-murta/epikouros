@@ -32,7 +32,12 @@ export const EpButton: React.FC<EpButtonProps> = ({
   };
 
   return (
-    <button className={classes} disabled={disabled} onClick={handleClick} {...props}>
+    <button
+      className={classes}
+      disabled={disabled}
+      onClick={handleClick}
+      {...props}
+    >
       {children}
     </button>
   );

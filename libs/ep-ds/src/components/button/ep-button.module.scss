@@ -11,47 +11,43 @@
   color: $color-content-bright;
   transition: background-color 0.2s ease, color 0.2s ease,
     border-color 0.2s ease, opacity 0.2s ease;
-  // Borda padrão para todos os tamanhos
+
   border-radius: $spacing-1;
 }
 
-// Tamanhos
 .size-small {
-  height: 32px; // spacing-4
-  padding: 0 $spacing-2; // 16px lateral
+  height: 32px;
+  padding: 0 $spacing-2;
   font-size: $font-size-sm;
 }
 
 .size-medium {
-  height: 40px; // spacing-5
-  padding: 0 $spacing-2; // 16px lateral
+  height: 40px;
+  padding: 0 $spacing-2;
   font-size: $font-size-base;
 }
 
 .size-large {
-  height: 48px; // spacing-6
-  padding: 0 $spacing-2; // 16px lateral
+  height: 48px;
+  padding: 0 $spacing-2;
   font-size: $font-size-md;
 }
 
-// Cores base
 .color-primary {
   --btn-bg: #{$color-primary};
-  // Para outline/text, o texto acompanha a mesma cor da borda (primary)
+
   --btn-fg: #{$color-primary};
   --btn-border: #{$color-primary};
 }
 
 .color-secondary {
   --btn-bg: #{$color-secondary};
-  // Para outline/text, o texto acompanha a mesma cor da borda (secondary)
+
   --btn-fg: #{$color-secondary};
   --btn-border: #{$color-secondary};
 }
 
-// Status colors
 .color-positive {
-  // Usamos superfície para fundo e content para texto/borda
   --btn-bg: #{$color-surface-positive};
   --btn-fg: #{$color-content-positive};
   --btn-border: #{$color-content-positive};
@@ -63,10 +59,9 @@
   --btn-border: #{$color-content-negative};
 }
 
-// Variantes
 .variant-solid {
   background-color: var(--btn-bg);
-  // Para solid, o texto sempre usa color-content-primary
+
   color: #{$color-content-primary};
   border: 1px solid var(--btn-border);
 
@@ -81,7 +76,6 @@
   }
 }
 
-// Para a variante solid, o fundo deve usar os tokens de status
 .variant-solid.color-positive {
   --btn-bg: #{$color-status-positive};
 }
@@ -92,7 +86,7 @@
 
 .variant-outline {
   background-color: transparent;
-  // O texto deve acompanhar o token de conteúdo/borda
+
   color: var(--btn-fg);
   border: 1px solid var(--btn-border);
 
@@ -107,7 +101,7 @@
 
 .variant-text {
   background-color: transparent;
-  // Texto usa tokens de conteúdo
+
   color: var(--btn-fg);
   border: none;
 

@@ -5,14 +5,12 @@
   width: 100%;
 }
 
-// Colunas (1-12)
 @for $i from 1 through 12 {
   .cols-#{$i} {
     grid-template-columns: repeat($i, minmax(0, 1fr));
   }
 }
 
-// Gaps baseados nos tokens de espaçamento
 @each $key, $value in $spacings {
   .gap-#{$key} {
     gap: $value;
@@ -27,17 +25,12 @@
   }
 }
 
-
-
-// Responsividade
 @media (max-width: 640px) {
   @for $i from 1 through 12 {
     .sm-cols-#{$i} {
       grid-template-columns: repeat($i, minmax(0, 1fr));
     }
   }
-
-
 }
 
 @media (max-width: 768px) {
@@ -46,8 +39,6 @@
       grid-template-columns: repeat($i, minmax(0, 1fr));
     }
   }
-
-
 }
 
 @media (max-width: 1024px) {
@@ -56,6 +47,4 @@
       grid-template-columns: repeat($i, minmax(0, 1fr));
     }
   }
-
-
 }

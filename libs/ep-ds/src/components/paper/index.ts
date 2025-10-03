@@ -1,9 +1,9 @@
 export { EpPaper } from './ep-paper';
-export type { 
-  EpPaperProps, 
-  PaperVariant, 
-  PaperBorder, 
-  PaperBorderRadius, 
+export type {
+  EpPaperProps,
+  PaperVariant,
+  PaperBorder,
+  PaperBorderRadius,
   PaperElevation,
-  PaperPadding 
+  PaperPadding,
 } from './ep-paper.types';

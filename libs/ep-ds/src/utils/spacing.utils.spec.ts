@@ -1,7 +1,6 @@
 import { processSpacingShorthand } from './spacing.utils';
 
 describe('processSpacingShorthand', () => {
-  // Mock do objeto styles para simular CSS modules
   const mockStyles = {
     'p-1': 'padding-1',
     'p-2': 'padding-2',
@@ -115,12 +114,20 @@ describe('processSpacingShorthand', () => {
   describe('quando value tem 3 valores (top horizontal bottom)', () => {
     it('deve aplicar padding top, horizontal e bottom', () => {
       const result = processSpacingShorthand('1 2 3', 'p', mockStyles);
-      expect(result).toEqual(['padding-top-1', 'padding-x-2', 'padding-bottom-3']);
+      expect(result).toEqual([
+        'padding-top-1',
+        'padding-x-2',
+        'padding-bottom-3',
+      ]);
     });
 
     it('deve funcionar com valores repetidos', () => {
       const result = processSpacingShorthand('2 2 2', 'p', mockStyles);
-      expect(result).toEqual(['padding-top-2', 'padding-x-2', 'padding-bottom-2']);
+      expect(result).toEqual([
+        'padding-top-2',
+        'padding-x-2',
+        'padding-bottom-2',
+      ]);
     });
   });
 
@@ -129,9 +136,9 @@ describe('processSpacingShorthand', () => {
       const result = processSpacingShorthand('1 2 3 4', 'p', mockStyles);
       expect(result).toEqual([
         'padding-top-1',
-        'padding-right-2', 
+        'padding-right-2',
         'padding-bottom-3',
-        'padding-left-4'
+        'padding-left-4',
       ]);
     });
 
@@ -140,8 +147,8 @@ describe('processSpacingShorthand', () => {
       expect(result).toEqual([
         'margin-top-1',
         'margin-right-2',
-        'margin-bottom-1', 
-        'margin-left-2'
+        'margin-bottom-1',
+        'margin-left-2',
       ]);
     });
   });
@@ -161,7 +168,11 @@ describe('processSpacingShorthand', () => {
 
     it('deve lidar com tabs e quebras de linha', () => {
       const result = processSpacingShorthand('1\t2\n3', 'p', mockStyles);
-      expect(result).toEqual(['padding-top-1', 'padding-x-2', 'padding-bottom-3']);
+      expect(result).toEqual([
+        'padding-top-1',
+        'padding-x-2',
+        'padding-bottom-3',
+      ]);
     });
   });
 

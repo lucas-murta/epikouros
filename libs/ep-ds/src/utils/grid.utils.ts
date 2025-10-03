@@ -1,9 +1,6 @@
 import { processSpacingShorthand } from './spacing.utils';
 import { GridSpacing } from '../components/grid/ep-grid.types';
 
-/**
- * Constrói as classes CSS para o componente Grid
- */
 export function buildGridClasses(
   props: {
     cols?: GridSpacing;
@@ -44,7 +41,6 @@ export function buildGridClasses(
     className = '',
   } = props;
 
-  // Processar padding e margin
   const paddingClasses = processSpacingShorthand(padding, 'p', styles);
   const smPaddingClasses = processSpacingShorthand(smPadding, 'sm-p', styles);
   const mdPaddingClasses = processSpacingShorthand(mdPadding, 'md-p', styles);
@@ -55,7 +51,6 @@ export function buildGridClasses(
   const mdMarginClasses = processSpacingShorthand(mdMargin, 'md-m', styles);
   const lgMarginClasses = processSpacingShorthand(lgMargin, 'lg-m', styles);
 
-  // Construir as classes CSS
   const gridClasses = [
     styles.grid,
     styles[`cols-${cols}`],
@@ -73,8 +68,10 @@ export function buildGridClasses(
     ...smMarginClasses,
     ...mdMarginClasses,
     ...lgMarginClasses,
-    className
-  ].filter(Boolean).join(' ');
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return gridClasses;
 }

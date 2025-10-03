@@ -35,10 +35,10 @@ describe('EpTypography', () => {
       'highlight-medium',
       'body-large',
       'body-medium',
-      'body-small'
+      'body-small',
     ] as const;
 
-    variants.forEach(variant => {
+    variants.forEach((variant) => {
       it(`should apply ${variant} variant class`, () => {
         const { getByText } = render(
           <EpTypography variant={variant}>Test content</EpTypography>
@@ -53,7 +53,7 @@ describe('EpTypography', () => {
   describe('Font sizes', () => {
     const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
-    sizes.forEach(size => {
+    sizes.forEach((size) => {
       it(`should apply ${size} size class`, () => {
         const { getByText } = render(
           <EpTypography size={size}>Test content</EpTypography>
@@ -68,7 +68,7 @@ describe('EpTypography', () => {
   describe('Font weights', () => {
     const weights = ['light', 'normal', 'medium', 'semibold', 'bold'] as const;
 
-    weights.forEach(weight => {
+    weights.forEach((weight) => {
       it(`should apply ${weight} weight class`, () => {
         const { getByText } = render(
           <EpTypography weight={weight}>Test content</EpTypography>
@@ -83,7 +83,7 @@ describe('EpTypography', () => {
   describe('Font families', () => {
     const families = ['body', 'heading', 'display'] as const;
 
-    families.forEach(family => {
+    families.forEach((family) => {
       it(`should apply ${family} family class`, () => {
         const { getByText } = render(
           <EpTypography family={family}>Test content</EpTypography>
@@ -96,9 +96,15 @@ describe('EpTypography', () => {
   });
 
   describe('Line heights', () => {
-    const lineHeights = ['tight', 'snug', 'normal', 'relaxed', 'loose'] as const;
+    const lineHeights = [
+      'tight',
+      'snug',
+      'normal',
+      'relaxed',
+      'loose',
+    ] as const;
 
-    lineHeights.forEach(lineHeight => {
+    lineHeights.forEach((lineHeight) => {
       it(`should apply ${lineHeight} line height class`, () => {
         const { getByText } = render(
           <EpTypography lineHeight={lineHeight}>Test content</EpTypography>
@@ -111,12 +117,21 @@ describe('EpTypography', () => {
   });
 
   describe('Letter spacings', () => {
-    const letterSpacings = ['tighter', 'tight', 'normal', 'wide', 'wider', 'widest'] as const;
+    const letterSpacings = [
+      'tighter',
+      'tight',
+      'normal',
+      'wide',
+      'wider',
+      'widest',
+    ] as const;
 
-    letterSpacings.forEach(letterSpacing => {
+    letterSpacings.forEach((letterSpacing) => {
       it(`should apply ${letterSpacing} letter spacing class`, () => {
         const { getByText } = render(
-          <EpTypography letterSpacing={letterSpacing}>Test content</EpTypography>
+          <EpTypography letterSpacing={letterSpacing}>
+            Test content
+          </EpTypography>
         );
         const element = getByText('Test content');
 
@@ -128,7 +143,7 @@ describe('EpTypography', () => {
   describe('Text alignment', () => {
     const alignments = ['left', 'center', 'right', 'justify'] as const;
 
-    alignments.forEach(align => {
+    alignments.forEach((align) => {
       it(`should apply ${align} alignment class`, () => {
         const { getByText } = render(
           <EpTypography align={align}>Test content</EpTypography>
@@ -231,7 +246,9 @@ describe('EpTypography', () => {
 
     it('should pass through additional props', () => {
       const { getByText } = render(
-        <EpTypography data-testid="typography-element">Test content</EpTypography>
+        <EpTypography data-testid="typography-element">
+          Test content
+        </EpTypography>
       );
       const element = getByText('Test content');
 
@@ -276,11 +293,7 @@ describe('EpTypography', () => {
 
     it('should override variant properties with specific props', () => {
       const { getByText } = render(
-        <EpTypography
-          variant="body-small"
-          size={8}
-          weight="bold"
-        >
+        <EpTypography variant="body-small" size={8} weight="bold">
           Test content
         </EpTypography>
       );
