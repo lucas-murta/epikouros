@@ -5,6 +5,19 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.10.0](https://github.com/lucas-murta/epikouros/compare/v1.9.0...v1.10.0) (2025-10-03)
+
+### ✨ Features
+
+- **ep-ds:** add EpInput base component (types, styles, component) ([ae8d8d4](https://github.com/lucas-murta/epikouros/commit/ae8d8d4074091e8ebc795b7f96d459f192ca7580))
+- **ep-input:** hide number spinners; add remaining char counter when maxLength is set ([34dbd60](https://github.com/lucas-murta/epikouros/commit/34dbd608ae43fece7615f401531fe66764e63162))
+- **ep-input:** move counter inside input; dynamic color states (warning/negative) ([c33e2ab](https://github.com/lucas-murta/epikouros/commit/c33e2abb31e1663d63034f15fe5b374155318bb2))
+
+### 🐛 Bug Fixes
+
+- **ep-input:** ensure messageSuccess overrides messageInfo to avoid overlap ([59645f0](https://github.com/lucas-murta/epikouros/commit/59645f051b94ba405fcb9a6d99cfb420de057cc4))
+- **ep-input:** remove deprecated onKeyPress; correct types; use color tokens in styles ([0e16eae](https://github.com/lucas-murta/epikouros/commit/0e16eae1d7b02894341237dc99024fff2f56b7a2))
+
 ## [1.9.0](https://github.com/lucas-murta/epikouros/compare/v1.8.0...v1.9.0) (2025-10-02)
 
 ### ✨ Features
