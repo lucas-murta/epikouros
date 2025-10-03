@@ -12,6 +12,7 @@ export type EpInputRef = {
 export interface EpInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className'> {
   value?: string | number;
+  icon?: string;
   label?: string;
   messageInfo?: string;
   messageDanger?: string;

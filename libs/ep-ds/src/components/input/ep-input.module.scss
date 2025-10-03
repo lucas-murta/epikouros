@@ -16,6 +16,20 @@
   position: relative;
 }
 
+.iconContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $spacing-6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-border-2;
+  border-top-left-radius: $spacing-1;
+  border-bottom-left-radius: $spacing-1;
+}
+
 .input {
   height: 40px;
   padding: 0 $spacing-2;
@@ -42,6 +56,10 @@
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.hasIcon .input {
+  padding-left: $spacing-6;
 }
 
 .hasCounter .input {
