@@ -136,24 +136,21 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       onClick?.(e);
     };
 
-    const hasValue =
-      value !== undefined && value !== null && String(value).length > 0;
-
     return (
       <label className={styles.wrapper}>
         {label && <span className={styles.label}>{label}</span>}
         <div
           className={[
             typeof maxLength === 'number' ? styles.hasCounter : '',
-            hasValue && icon ? styles.hasIcon : '',
+            icon ? styles.hasIcon : '',
             styles.inputContainer,
           ]
             .filter(Boolean)
             .join(' ')}
         >
-          {hasValue && icon && (
+          {icon && (
             <div className={styles.iconContainer} aria-hidden="true">
-              <EpIcon name={icon} size={4} />
+              <EpIcon name={icon} size={2} />
             </div>
           )}
           <input

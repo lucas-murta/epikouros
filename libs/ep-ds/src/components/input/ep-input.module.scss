@@ -18,16 +18,13 @@
 
 .iconContainer {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: $spacing-6;
+  inset: 4px;
+  width: $spacing-4;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $color-border-2;
-  border-top-left-radius: $spacing-1;
-  border-bottom-left-radius: $spacing-1;
+  background-color: $color-surface-2;
+  border-radius: $spacing-1;
 }
 
 .input {
@@ -41,9 +38,9 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
-    border-color: $color-status-focus;
+    border-color: $color-primary;
     box-shadow: 0 0 0 3px
-      color-mix(in oklab, $color-status-focus 20%, $color-surface-0);
+      color-mix(in oklab, $color-primary 20%, $color-surface-0);
   }
 
   &[type='number'] {
