@@ -42,6 +42,9 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
   ) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [isValid, setIsValid] = useState(true);
+    const [charCount, setCharCount] = useState<number>(
+      typeof value === 'string' ? value.length : 0
+    );
 
     useImperativeHandle(ref, () => ({
       focus: () => inputRef.current?.focus(),
@@ -88,6 +91,9 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       const valid = e.currentTarget.checkValidity();
       setIsValid(valid);
       onReportValidity?.(valid);
+      if (typeof maxLength === 'number') {
+        setCharCount(e.currentTarget.value.length);
+      }
       onChange?.(e);
     };
 
@@ -149,6 +155,11 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
         )}
         {isValid && messageSuccess && (
           <span className={styles.messageSuccess}>{messageSuccess}</span>
+        )}
+        {typeof maxLength === 'number' && (
+          <span className={styles.charCounter}>
+            {Math.max(0, maxLength - charCount)}
+          </span>
         )}
       </label>
     );
