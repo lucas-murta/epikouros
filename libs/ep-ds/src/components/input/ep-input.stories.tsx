@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { EpInput } from './ep-input';
 import type { EpInputRef } from './ep-input.types';
 
-const ImperativeDemo: React.FC<any> = (p) => {
+const ImperativeDemo: React.FC<React.ComponentProps<typeof EpInput>> = (p) => {
   const ref = useRef<EpInputRef>(null);
   const [val, setVal] = useState('');
   return (
