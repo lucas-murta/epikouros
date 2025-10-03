@@ -8,3 +8,5 @@ export * from './button';
 export { EpButton } from './button';
 export * from './input';
 export { EpInput } from './input';
+export * from './icon';
+export { EpIcon } from './icon';
