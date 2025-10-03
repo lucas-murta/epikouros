@@ -66,16 +66,13 @@ export const EpInput = forwardRef<EpInputRef, EpInputProps>(
       blur: () => inputRef.current?.blur(),
       clear: () => {
         const el = inputRef.current;
-        if (el) {
-          el.value = '';
-          const valid = el.checkValidity();
-          setIsValid(valid);
-          // Disparar eventos para refletir mudança imediata
-          const inputEvent = new Event('input', { bubbles: true });
-          const changeEvent = new Event('change', { bubbles: true });
-          el.dispatchEvent(inputEvent);
-          el.dispatchEvent(changeEvent);
-        }
+        if (!el) return;
+        if (!el.value) return;
+        el.value = '';
+        const inputEvent = new Event('input', { bubbles: true });
+        const changeEvent = new Event('change', { bubbles: true });
+        el.dispatchEvent(inputEvent);
+        el.dispatchEvent(changeEvent);
       },
       setInvalidity: () => {
         setIsValid(false);
