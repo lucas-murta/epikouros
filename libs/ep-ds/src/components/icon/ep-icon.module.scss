@@ -1,0 +1,13 @@
+@use '../../globals/index.scss' as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  color: $color-content-default;
+}
+
+@each $key, $value in $spacings {
+  .size-#{$key} { font-size: $value; }
+}
