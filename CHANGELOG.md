@@ -5,6 +5,17 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.11.0](https://github.com/lucas-murta/epikouros/compare/v1.10.0...v1.11.0) (2025-10-03)
+
+### ✨ Features
+
+- **ep-icon:** add ariaLabel prop, fix types for icon component ([2b6b611](https://github.com/lucas-murta/epikouros/commit/2b6b61165fad21d29ff87464170a1742137ce3ed))
+- **ep-icon:** add EpIcon component using react-icons (FontAwesome) ([95d6a96](https://github.com/lucas-murta/epikouros/commit/95d6a968b804bb5282a22211e181b9928caccb8a))
+
+### ♻️ Code Refactoring
+
+- **ep-icon:** remove color prop and align size with Typography ([2cb50e4](https://github.com/lucas-murta/epikouros/commit/2cb50e4c0bad10c8da958f1d483f9c86c6bd0275))
+
 ## [1.10.0](https://github.com/lucas-murta/epikouros/compare/v1.9.0...v1.10.0) (2025-10-03)
 
 ### ✨ Features
